@@ -79,9 +79,8 @@ export function activate(context: vscode.ExtensionContext) {
                 editor.selections = sel.map((selection) => {
                     let start = selection.start
                     let end = selection.end
-                    let text = doc.getText(selection)
                     return new vscode.Selection(
-                        new vscode.Position(start.line, start.character + 1), 
+                        new vscode.Position(start.line, start.character + 1),
                         new vscode.Position(end.line, end.character + 1))
                 })
             })
@@ -108,12 +107,18 @@ export function activate(context: vscode.ExtensionContext) {
                 editor.selections = sel.map((selection) => {
                     let start = selection.start
                     let end = selection.end
-                    let text = doc.getText(selection)
                     return new vscode.Selection(
                         new vscode.Position(start.line, start.character - 1),
                         new vscode.Position(end.line, end.character - 1))
                 })
             })
+        })
+    )
+    context.subscriptions.push(
+        vscode.commands.registerCommand('better-markdown-latex-shortcuts.singleCursor', () => {
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            editor.selections = [editor.selection]
         })
     )
 }
