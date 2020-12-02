@@ -10,6 +10,25 @@ You can also press `Ctrl + Alt + U` to single the selections.
 
 ## Copy
 
+![copy](https://s3.ax1x.com/2020/12/02/DIg8ds.gif)
+
+## Multicopy
+
+![multicopy](https://s3.ax1x.com/2020/12/02/DIgGon.gif)
+
+## Move
+
+![move](https://s3.ax1x.com/2020/12/02/DIgYiq.gif)
+
+## Single Selections
+
+![single](https://s3.ax1x.com/2020/12/02/DIgtJ0.gif)
+
+
+# Display (Source)
+
+## Copy
+
 ![copy](images/copy.gif)
 
 ## Multicopy
