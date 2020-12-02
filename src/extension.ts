@@ -17,13 +17,6 @@ export function activate(context: vscode.ExtensionContext) {
             let doc = editor.document
             let sel = editor.selections
             if (sel.length === 0) { return }
-            // editor.edit((edit) => {
-            //     let start = sel[0].start
-            //     if (!editor) { return }
-            //     let text = doc.getText(sel[0])
-            //     edit.insert(start, text)
-            //     editor.selection = new vscode.Selection(start, new vscode.Position(start.line, start.character + text.length))
-            // })
             editor.edit((edit) => {
                 if (!editor) { return }
                 sel.forEach((selection) => {
@@ -67,12 +60,60 @@ export function activate(context: vscode.ExtensionContext) {
     )
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.moveToRight', () => {
-            vscode.window.showInformationMessage('Success to move to right!')
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            let doc = editor.document
+            let sel = editor.selections
+            if (sel.length === 0) { return }
+            editor.edit((edit) => {
+                if (!editor) { return }
+                sel.forEach((selection) => {
+                    let range = new vscode.Range(
+                        new vscode.Position(selection.start.line, selection.start.character),
+                        new vscode.Position(selection.end.line, selection.end.character + 1))
+                    let text = doc.getText(range)
+                    edit.replace(range, text.charAt(text.length - 1) + text.slice(0, text.length - 1))
+                })
+            }).then(() => {
+                if (!editor) { return }
+                editor.selections = sel.map((selection) => {
+                    let start = selection.start
+                    let end = selection.end
+                    let text = doc.getText(selection)
+                    return new vscode.Selection(
+                        new vscode.Position(start.line, start.character + 1), 
+                        new vscode.Position(end.line, end.character + 1))
+                })
+            })
         })
     )
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.moveToLeft', () => {
-            vscode.window.showInformationMessage('Success to move to left!')
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            let doc = editor.document
+            let sel = editor.selections
+            if (sel.length === 0) { return }
+            editor.edit((edit) => {
+                if (!editor) { return }
+                sel.forEach((selection) => {
+                    let range = new vscode.Range(
+                        new vscode.Position(selection.start.line, selection.start.character - 1),
+                        new vscode.Position(selection.end.line, selection.end.character))
+                    let text = doc.getText(range)
+                    edit.replace(range, text.slice(1, text.length) + text.charAt(0))
+                })
+            }).then(() => {
+                if (!editor) { return }
+                editor.selections = sel.map((selection) => {
+                    let start = selection.start
+                    let end = selection.end
+                    let text = doc.getText(selection)
+                    return new vscode.Selection(
+                        new vscode.Position(start.line, start.character - 1),
+                        new vscode.Position(end.line, end.character - 1))
+                })
+            })
         })
     )
 }
