@@ -21,31 +21,31 @@
             {
                 "command": "better-markdown-latex-shortcuts.copyToRight",
                 "key": "Shift+Alt+Right",
-                "mac": "Shift+Option+Right",
+                "mac": "Shift+Alt+Right",
                 "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.copyToLeft",
                 "key": "Shift+Alt+Left",
-                "mac": "Shift+Option+Left",
+                "mac": "Shift+Alt+Left",
                 "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.moveToRight",
                 "key": "Alt+Right",
-                "mac": "Shift+Option+Right",
+                "mac": "Alt+Right",
                 "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.moveToLeft",
                 "key": "Alt+Left",
-                "mac": "Shift+Option+Left",
+                "mac": "Alt+Left",
                 "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.singleCursor",
                 "key": "Ctrl+Alt+U",
-                "mac": "Cmd+Option+U",
+                "mac": "Cmd+Alt+U",
                 "when": "editorTextFocus && editorHasSelection"
             }
         ]
