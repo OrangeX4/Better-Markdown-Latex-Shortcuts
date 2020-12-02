@@ -6,6 +6,12 @@ Similarly to `Alt + ↑↓`, you can press `Alt + ← →` to move what you sele
 
 You can also press `Ctrl + Alt + U` to single the selections.
 
+# Install
+
+Search `Orangex4` in vscode extensions market and install the one called "Better Markdown&Latex Shortcuts".
+
+![img](https://s3.ax1x.com/2020/12/02/DIW5mF.png)
+
 # Display
 
 ## Copy
