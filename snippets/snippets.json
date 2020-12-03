@@ -1,50 +1,204 @@
 {
+	"\\\\": {
+		"prefix": "\\\\",
+		"body": [
+			"\\\\\\\\"
+		],
+		"description": "\\\\"
+    },
+	"singleLine": {
+		"prefix": "\\\\$",
+		"body": "$\\displaystyle ${1:${TM_SELECTED_TEXT}}$",
+		"description": "subscript"
+	},
+	"multiLine": {
+		"prefix": "\\\\$$",
+		"body": [
+            "$$",
+            "${1:${TM_SELECTED_TEXT}}",
+            "$$"
+        ],
+		"description": "subscript"
+	},
+	"subscript": {
+		"prefix": "\\\\-",
+		"body": "_{${1:${TM_SELECTED_TEXT}}}",
+		"description": "subscript"
+	},
+	"superscript": {
+		"prefix": "\\\\6",
+		"body": "^{${1:${TM_SELECTED_TEXT}}}",
+		"description": "superscript"
+	},
+	"cdots": {
+		"prefix": "\\\\...",
+		"body": "\\cdots ",
+		"description": "\\cdots"
+	},
+	"cdot": {
+		"prefix": "\\\\.",
+		"body": "\\cdot ",
+		"description": "\\cdot"
+	},
 	"d": {
-		"scope": "markdown",
-		"prefix": "\\\\rmd",
+		"prefix": "\\\\d",
 		"body": [
 			"{\\rm d}"
 		],
 		"description": "{\\rm d}"
 	},
+	"dx": {
+		"prefix": "\\\\dx",
+		"body": [
+			"{\\rm d}x"
+		],
+		"description": "dx"
+	},
+	"dy": {
+		"prefix": "\\\\dy",
+		"body": [
+			"{\\rm d}y"
+		],
+		"description": "dy"
+	},
 	"set": {
-		"scope": "markdown",
 		"prefix": "\\\\set",
 		"body": [
-			"\\{$1\\\\}"
+			"\\{${1:${TM_SELECTED_TEXT}}\\\\}"
 		],
 		"description": "A set"
     },
 	"angle": {
-		"scope": "markdown",
 		"prefix": "\\\\angle",
 		"body": [
-			"\\langle $1\\rangle "
+			"\\langle ${1:${TM_SELECTED_TEXT}}\\rangle "
 		],
 		"description": "A angle"
     },
-	"matrix": {
-		"scope": "markdown",
-		"prefix": "\\\\matrix",
+	"multiply": {
+		"prefix": "\\\\multiply",
+		"body": [
+            "${1:\\alpha}_1\\times ${1:\\alpha}_2\\times \\cdots\\times ${1:\\alpha}_${2:n}"
+		],
+        "description": "A line with multiply"
+    },
+	"dotmultiply": {
+		"prefix": "\\\\dotmultiply",
+		"body": [
+            "${1:\\alpha}_1\\cdot ${1:\\alpha}_2\\cdots ${1:\\alpha}_${2:n}"
+		],
+        "description": "A line with dot multiply"
+    },
+	"plus": {
+		"prefix": "\\\\plus",
+		"body": [
+            "${1:\\alpha}_1+${1:\\alpha}_2+\\cdots+${1:\\alpha}_${2:n}"
+		],
+        "description": "A line with plus"
+    },
+	"comma": {
+		"prefix": "\\\\comma",
+		"body": [
+            "${1:\\alpha}_1,${1:\\alpha}_2,\\cdots,${1:\\alpha}_${2:n}"
+		],
+        "description": "A line with comma"
+    },
+	"mline": {
+		"prefix": "\\\\mline",
 		"body": [
 			"${1:\\alpha} &${2:\\beta} &\\cdots &${3:\\lambda} \\\\\\\\"
 		],
         "description": "A line of matrix"
     },
-	"dmatrix": {
-		"scope": "markdown",
-		"prefix": "\\\\dmatrix",
+	"smline": {
+		"prefix": "\\\\smline",
 		"body": [
 			"${1:\\alpha}_1 &${1:\\alpha}_2 &\\cdots &${1:\\alpha}_${2:n} \\\\\\\\"
 		],
-        "description": "A line of matrix with number"
+        "description": "A line of matrix with subscript"
     },
-	"vmatrix": {
-		"scope": "markdown",
-		"prefix": "\\\\dmatrix",
+	"vdots": {
+		"prefix": "\\\\vdots",
 		"body": [
 			"\\vdots &\\vdots & &\\vdots \\\\\\\\"
 		],
         "description": "A line of vdots"
+    },
+    "aligned": {
+        "prefix": "\\\\aligned",
+        "body": [
+            "$$",
+            "\\begin{aligned}",
+            "${1:${TM_SELECTED_TEXT}}",
+            "\\end{aligned}",
+            "$$"
+        ],
+        "description": "A scope of aligned"
+    },
+    "matrix": {
+        "prefix": "\\\\matrix",
+        "body": [
+            "$$",
+            "\\begin{matrix}",
+            "${1:${TM_SELECTED_TEXT}}",
+            "\\end{matrix}",
+            "$$"
+        ],
+        "description": "A scope of matrix"
+    },
+    "bmatrix": {
+        "prefix": "\\\\bmatrix",
+        "body": [
+            "\\begin{bmatrix}",
+            "${1:${TM_SELECTED_TEXT}}",
+            "\\end{bmatrix}"
+        ],
+        "description": "A scope of bmatrix"
+    },
+    "vmatrix": {
+        "prefix": "\\\\vmatrix",
+        "body": [
+            "\\begin{vmatrix}",
+            "${1:${TM_SELECTED_TEXT}}",
+            "\\end{vmatrix}"
+        ],
+        "description": "A scope of vmatrix"
+    },
+    "pmatrix": {
+        "prefix": "\\\\pmatrix",
+        "body": [
+            "\\begin{pmatrix}",
+            "${1:${TM_SELECTED_TEXT}}",
+            "\\end{pmatrix}"
+        ],
+        "description": "A scope of pmatrix"
+    },
+    "equations": {
+        "prefix": "\\\\equations",
+        "body": [
+            "$$",
+            "\\begin{cases}",
+            "${1:k}_{11}${2:x}_1+${1:k}_{12}${2:x}_2+\\cdots+${1:k}_{1n}${2:x}_n=${3:b}_1 \\\\\\\\",
+            "${1:k}_{21}${2:x}_1+${1:k}_{22}${2:x}_2+\\cdots+${1:k}_{2n}${2:x}_n=${3:b}_2 \\\\\\\\",
+            "\\cdots \\\\\\\\",
+            "${1:k}_{n1}${2:x}_1+${1:k}_{n2}${2:x}_2+\\cdots+${1:k}_{nn}${2:x}_n=${3:b}_n \\\\\\\\",
+            "\\end{cases}",
+            "$$"
+        ],
+        "description": "Equations"
+    },
+    "zeroEquations": {
+        "prefix": "\\\\zeroequations",
+        "body": [
+            "$$",
+            "\\begin{cases}",
+            "${1:k}_{11}${2:x}_1+${1:k}_{12}${2:x}_2+\\cdots+${1:k}_{1n}${2:x}_n=0 \\\\\\\\",
+            "${1:k}_{21}${2:x}_1+${1:k}_{22}${2:x}_2+\\cdots+${1:k}_{2n}${2:x}_n=0 \\\\\\\\",
+            "\\cdots \\\\\\\\",
+            "${1:k}_{n1}${2:x}_1+${1:k}_{n2}${2:x}_2+\\cdots+${1:k}_{nn}${2:x}_n=0 \\\\\\\\",
+            "\\end{cases}",
+            "$$"
+        ],
+        "description": "Equations"
     }
 }
