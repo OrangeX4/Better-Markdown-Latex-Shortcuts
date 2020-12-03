@@ -117,6 +117,7 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.singleCursor', () => {
             let editor = vscode.window.activeTextEditor
+            
             if (!editor) { return }
             editor.selections = [editor.selection]
         })

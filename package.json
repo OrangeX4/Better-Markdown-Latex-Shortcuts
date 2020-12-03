@@ -4,7 +4,7 @@
     "displayName": "Better Markdown+Latex Shortcuts",
     "description": "Providing some useful shortcuts for markdown with latex.",
     "keywords": ["vscode", "markdown", "latex", "math", "shortcut"],
-    "version": "1.0.3",
+    "version": "1.0.4",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -46,7 +46,7 @@
                 "command": "better-markdown-latex-shortcuts.singleCursor",
                 "key": "Ctrl+Alt+U",
                 "mac": "Cmd+Alt+U",
-                "when": "editorTextFocus && editorHasSelection"
+                "when": "editorTextFocus"
             }
         ]
     },
