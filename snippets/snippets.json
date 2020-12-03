@@ -1,0 +1,50 @@
+{
+	"d": {
+		"scope": "markdown",
+		"prefix": "\\\\rmd",
+		"body": [
+			"{\\rm d}"
+		],
+		"description": "{\\rm d}"
+	},
+	"set": {
+		"scope": "markdown",
+		"prefix": "\\\\set",
+		"body": [
+			"\\{$1\\\\}"
+		],
+		"description": "A set"
+    },
+	"angle": {
+		"scope": "markdown",
+		"prefix": "\\\\angle",
+		"body": [
+			"\\langle $1\\rangle "
+		],
+		"description": "A angle"
+    },
+	"matrix": {
+		"scope": "markdown",
+		"prefix": "\\\\matrix",
+		"body": [
+			"${1:\\alpha} &${2:\\beta} &\\cdots &${3:\\lambda} \\\\\\\\"
+		],
+        "description": "A line of matrix"
+    },
+	"dmatrix": {
+		"scope": "markdown",
+		"prefix": "\\\\dmatrix",
+		"body": [
+			"${1:\\alpha}_1 &${1:\\alpha}_2 &\\cdots &${1:\\alpha}_${2:n} \\\\\\\\"
+		],
+        "description": "A line of matrix with number"
+    },
+	"vmatrix": {
+		"scope": "markdown",
+		"prefix": "\\\\dmatrix",
+		"body": [
+			"\\vdots &\\vdots & &\\vdots \\\\\\\\"
+		],
+        "description": "A line of vdots"
+    }
+}
