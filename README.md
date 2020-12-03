@@ -30,6 +30,44 @@ Search `Orangex4` in vscode extensions market and install the one called "Better
 
 ![single](https://s3.ax1x.com/2020/12/02/DIgtJ0.gif)
 
+# Snippets
+
+|Snippet|Name|Code|
+|---|---|---|
+|\\\\|\\\\|\\\\|
+|\\\\\$|single line|\$\\displaystyle \$|
+|\\\\\$|multiline|\$\$<br />...<br />\$\$|
+|\\\\-|subscript|_{ }|
+|\\\\6|superscript|^{ }|
+|\\\\...|prefix|\\cdots|
+|\\\\.|cdot|\\cdot|
+|\\\\d|partial sign 'd'|{\\rm d}|
+|\\\\dx|partial sign 'dx'|{\\rm d}x|
+|\\\\dy|partial sign 'dy'|{\\rm d}y|
+|\\\\set|set bracket|\\{ \\}|
+|\\\\angle|angle bracket|\\langle \\rangle|
+|\\\\comma|alpha with comma|\\alpha_1,\\alpha_2,\\cdots,\\alpha_n|
+|\\\\plus|alpha with plus|\\alpha_1+\\alpha_2+\\cdots+\\alpha_n|
+|\\\\multiply|alpha with multiply|\\alpha_1\\times \\alpha_2\\times \\cdots\\times \\alpha_n|
+|\\\\dotmultiply|alpha with dot multiply|\\alpha_1\\cdot \\alpha_2\\cdots \\alpha_n|
+|\\\\mline|A line of matrix|\\alpha &\\beta &\\cdots &\\lambda \\\\|
+|\\\\smline|A line of matrix with subscript|\\alpha_1 &\\alpha_2 &\\cdots &\\alpha_n \\\\|
+|\\\\vdots|A line of vdots|\\vdots &\\vdots & &\\vdots \\\\|
+|\\\\aligned|A scope of aligned|\$\$<br />\\begin{aligned} <br />...<br />\\end{aligned}<br />\$\$|
+|\\\\matrix|A scope of matrix|\$\$<br />\\begin{matrix} <br />...<br />\\end{matrix}<br />\$\$|
+|\\\\bmatrix|A scope of bmatrix|\\begin{bmatrix} <br />...<br />\\end{bmatrix}|
+|\\\\vmatrix|A scope of vmatrix|\\begin{vmatrix} <br />...<br />\\end{vmatrix}|
+|\\\\pmatrix|A scope of pmatrix|\\begin{pmatrix} <br />...<br />\\end{pmatrix}|
+|\\\\equations|Equations|...|
+|\\\\zeroequations|Zero equations|...|
+
+# Display
+
+![](https://s3.ax1x.com/2020/12/03/D7Btm9.gif)
+
+![](https://s3.ax1x.com/2020/12/03/D7BNwR.gif)
+
+![](https://s3.ax1x.com/2020/12/03/D7BJOJ.gif)
 
 # Display (Source)
 
@@ -48,3 +86,11 @@ Search `Orangex4` in vscode extensions market and install the one called "Better
 ## Single Selections
 
 ![single](images/single.gif)
+
+## Snippets
+
+![](images/plus.gif)
+
+![](images/matrix.gif)
+
+![](images/equations.gif)

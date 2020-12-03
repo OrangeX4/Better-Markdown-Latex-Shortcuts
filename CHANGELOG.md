@@ -10,3 +10,4 @@ All notable changes to the "better-markdown-latex-shortcuts" extension will be d
 - 1.0.4 Fix bugs
 - 1.1.0 Add snippets
 - 1.1.2 Add more snippets
+- 1.1.4 Update README
