@@ -78,28 +78,28 @@
 	"multiply": {
 		"prefix": "\\\\multiply",
 		"body": [
-            "${1:\\alpha}_1\\times ${1:\\alpha}_2\\times \\cdots\\times ${1:\\alpha}_${2:n}"
+            "${1:\\alpha}${3:_}1\\times ${1:\\alpha}${3:_}2\\times \\cdots\\times ${1:\\alpha}${3:_}${2:n}"
 		],
         "description": "A line with multiply"
     },
 	"dotmultiply": {
 		"prefix": "\\\\dotmultiply",
 		"body": [
-            "${1:\\alpha}_1\\cdot ${1:\\alpha}_2\\cdots ${1:\\alpha}_${2:n}"
+            "${1:\\alpha}${3:_}1\\cdot ${1:\\alpha}${3:_}2\\cdots ${1:\\alpha}${3:_}${2:n}"
 		],
         "description": "A line with dot multiply"
     },
 	"plus": {
 		"prefix": "\\\\plus",
 		"body": [
-            "${1:\\alpha}_1+${1:\\alpha}_2+\\cdots+${1:\\alpha}_${2:n}"
+            "${1:\\alpha}${3:_}1+${1:\\alpha}${3:_}2+\\cdots+${1:\\alpha}${3:_}${2:n}"
 		],
         "description": "A line with plus"
     },
 	"comma": {
 		"prefix": "\\\\comma",
 		"body": [
-            "${1:\\alpha}_1,${1:\\alpha}_2,\\cdots,${1:\\alpha}_${2:n}"
+            "${1:\\alpha}${3:_}1,${1:\\alpha}${3:_}2,\\cdots,${1:\\alpha}${3:_}${2:n}"
 		],
         "description": "A line with comma"
     },
@@ -200,5 +200,35 @@
             "$$"
         ],
         "description": "Equations"
+    },
+    "lim": {
+        "prefix": "\\\\lim",
+        "body": "\\lim_{${1:x}\\to ${2:\\infty}}$3",
+        "description": "lim"
+    },
+    "sum": {
+        "prefix": "\\\\sum",
+        "body": "\\sum_{${1:i}=${2:1}}$3",
+        "description": "sum"
+    },
+    "prod": {
+        "prefix": "\\\\prod",
+        "body": "\\prod_{${1:i}=${2:1}}$3",
+        "description": "prod"
+    },
+    "ln": {
+        "prefix": "\\\\ln",
+        "body": "\\ln{${1:i}}$2",
+        "description": "ln"
+    },
+    "log": {
+        "prefix": "\\\\log",
+        "body": "\\log_{${1:i}}{${2:i}}$3",
+        "description": "log"
+    },
+    "bracket": {
+        "prefix": "\\\\bracket",
+        "body": "\\left ${1:${TM_SELECTED_TEXT}} \\right",
+        "description": "bracket"
     }
 }
