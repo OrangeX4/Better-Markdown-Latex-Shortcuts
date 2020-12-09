@@ -127,22 +127,18 @@
     "aligned": {
         "prefix": "\\\\aligned",
         "body": [
-            "$$",
             "\\begin{aligned}",
             "${1:${TM_SELECTED_TEXT}}",
-            "\\end{aligned}",
-            "$$"
+            "\\end{aligned}"
         ],
         "description": "A scope of aligned"
     },
     "matrix": {
         "prefix": "\\\\matrix",
         "body": [
-            "$$",
             "\\begin{matrix}",
             "${1:${TM_SELECTED_TEXT}}",
-            "\\end{matrix}",
-            "$$"
+            "\\end{matrix}"
         ],
         "description": "A scope of matrix"
     },
@@ -230,5 +226,90 @@
         "prefix": "\\\\bracket",
         "body": "\\left ${1:${TM_SELECTED_TEXT}} \\right",
         "description": "bracket"
+    },
+    "c2vector": {
+        "prefix": "\\\\c2vector",
+        "body": "\\begin{pmatrix}${1:1}\\\\\\\\${2:1}\\end{pmatrix}",
+        "description": "c2vector"
+    },
+    "c3vector": {
+        "prefix": "\\\\c3vector",
+        "body": "\\begin{pmatrix}${1:1}\\\\\\\\${2:1}\\\\\\\\${3:1}\\end{pmatrix}",
+        "description": "c3vector"
+    },
+    "c4vector": {
+        "prefix": "\\\\c4vector",
+        "body": "\\begin{pmatrix}${1:1}\\\\\\\\${2:1}\\\\\\\\${3:1}\\\\\\\\${4:1}\\end{pmatrix}",
+        "description": "c4vector"
+    },
+    "c5vector": {
+        "prefix": "\\\\c5vector",
+        "body": "\\begin{pmatrix}${1:1}\\\\\\\\${2:1}\\\\\\\\${3:1}\\\\\\\\${4:1}\\\\\\\\${5:1}\\end{pmatrix}",
+        "description": "c5vector"
+    },
+    "r2vector": {
+        "prefix": "\\\\r2vector",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}\\end{pmatrix}",
+        "description": "r2vector"
+    },
+    "r3vector": {
+        "prefix": "\\\\r3vector",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}&${3:1}\\end{pmatrix}",
+        "description": "r3vector"
+    },
+    "r4vector": {
+        "prefix": "\\\\r4vector",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}&${3:1}&${4:1}\\end{pmatrix}",
+        "description": "r4vector"
+    },
+    "r5vector": {
+        "prefix": "\\\\r5vector",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}&${3:1}&${4:1}&${5:1}\\end{pmatrix}",
+        "description": "r5vector"
+    },
+    "p22matrix": {
+        "prefix": "\\\\p22matrix",
+        "body": "\\begin{bmatrix}${1:1}&${2:1}\\\\\\\\${3:1}&${4:1}\\end{bmatrix}",
+        "description": "p22matrix"
+    },
+    "p23matrix": {
+        "prefix": "\\\\p23matrix",
+        "body": "\\begin{bmatrix}${1:1}&${2:1}\\\\\\\\${3:1}&${4:1}\\\\\\\\${5:1}&${6:1}\\end{bmatrix}",
+        "description": "p23matrix"
+    },
+    "p32matrix": {
+        "prefix": "\\\\p32matrix",
+        "body": "\\begin{bmatrix}${1:1}&${2:1}&${3:1}\\\\\\\\${4:1}&${5:1}&${6:1}\\end{bmatrix}",
+        "description": "p32matrix"
+    },
+    "p33matrix": {
+        "prefix": "\\\\p33matrix",
+        "body": "\\begin{bmatrix}${1:1}&${2:1}&${3:1}\\\\\\\\${4:1}&${5:1}&${6:1}\\\\\\\\${7:1}&${8:1}&${9:1}\\end{bmatrix}",
+        "description": "p33matrix"
+    },
+    "p42matrix": {
+        "prefix": "\\\\p42matrix",
+        "body": "\\begin{bmatrix}${1:1}&${2:1}&${3:1}&${4:1}\\\\\\\\${5:1}&${6:1}&${7:1}&${8:1}\\end{bmatrix}",
+        "description": "p42matrix"
+    },
+    "p43matrix": {
+        "prefix": "\\\\p43matrix",
+        "body": "\\begin{bmatrix}${1:1}&${2:1}&${3:1}&${4:1}\\\\\\\\${5:1}&${6:1}&${7:1}&${8:1}\\\\\\\\${9:1}&${10:1}&${11:1}&${12:1}\\end{bmatrix}",
+        "description": "p43matrix"
+    },
+    "p44matrix": {
+        "prefix": "\\\\p44matrix",
+        "body": "\\begin{bmatrix}${1:1}&${2:1}&${3:1}&${4:1}\\\\\\\\${5:1}&${6:1}&${7:1}&${8:1}\\\\\\\\${9:1}&${10:1}&${11:1}&${12:1}\\\\\\\\${13:1}&${14:1}&${15:1}&${16:1}\\end{bmatrix}",
+        "description": "p44matrix"
+    },
+    "p24matrix": {
+        "prefix": "\\\\p24matrix",
+        "body": "\\begin{bmatrix}${1:1}&${2:1}\\\\\\\\${3:1}&${4:1}\\\\\\\\${5:1}&${6:1}\\\\\\\\${7:1}&${8:1}\\end{bmatrix}",
+        "description": "p24matrix"
+    },
+    "p34matrix": {
+        "prefix": "\\\\p34matrix",
+        "body": "\\begin{bmatrix}${1:1}&${2:1}&${3:1}\\\\\\\\${4:1}&${5:1}&${6:1}\\\\\\\\${7:1}&${8:1}&${9:1}\\\\\\\\${10:1}&${11:1}&${12:1}\\end{bmatrix}",
+        "description": "p34matrix"
     }
 }
