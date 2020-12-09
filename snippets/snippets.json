@@ -340,7 +340,7 @@
     "v43matrix": {
         "prefix": "\\\\v43matrix",
         "body": "\\begin{vmatrix}${1:1}&${2:1}&${3:1}&${4:1}\\\\\\\\${5:1}&${6:1}&${7:1}&${8:1}\\\\\\\\${9:1}&${10:1}&${11:1}&${12:1}\\end{vmatrix}",
-        "description": "p43matrix"
+        "description": "v43matrix"
     },
     "v44matrix": {
         "prefix": "\\\\v44matrix",
@@ -356,5 +356,50 @@
         "prefix": "\\\\v34matrix",
         "body": "\\begin{vmatrix}${1:1}&${2:1}&${3:1}\\\\\\\\${4:1}&${5:1}&${6:1}\\\\\\\\${7:1}&${8:1}&${9:1}\\\\\\\\${10:1}&${11:1}&${12:1}\\end{vmatrix}",
         "description": "v34matrix"
+    },
+    "p22matrix": {
+        "prefix": "\\\\p22matrix",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}\\\\\\\\${3:1}&${4:1}\\end{pmatrix}",
+        "description": "p22matrix"
+    },
+    "p23matrix": {
+        "prefix": "\\\\p23matrix",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}\\\\\\\\${3:1}&${4:1}\\\\\\\\${5:1}&${6:1}\\end{pmatrix}",
+        "description": "p23matrix"
+    },
+    "p32matrix": {
+        "prefix": "\\\\p32matrix",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}&${3:1}\\\\\\\\${4:1}&${5:1}&${6:1}\\end{pmatrix}",
+        "description": "p32matrix"
+    },
+    "p33matrix": {
+        "prefix": "\\\\p33matrix",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}&${3:1}\\\\\\\\${4:1}&${5:1}&${6:1}\\\\\\\\${7:1}&${8:1}&${9:1}\\end{pmatrix}",
+        "description": "p33matrix"
+    },
+    "p42matrix": {
+        "prefix": "\\\\p42matrix",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}&${3:1}&${4:1}\\\\\\\\${5:1}&${6:1}&${7:1}&${8:1}\\end{pmatrix}",
+        "description": "p42matrix"
+    },
+    "p43matrix": {
+        "prefix": "\\\\p43matrix",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}&${3:1}&${4:1}\\\\\\\\${5:1}&${6:1}&${7:1}&${8:1}\\\\\\\\${9:1}&${10:1}&${11:1}&${12:1}\\end{pmatrix}",
+        "description": "p43matrix"
+    },
+    "p44matrix": {
+        "prefix": "\\\\p44matrix",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}&${3:1}&${4:1}\\\\\\\\${5:1}&${6:1}&${7:1}&${8:1}\\\\\\\\${9:1}&${10:1}&${11:1}&${12:1}\\\\\\\\${13:1}&${14:1}&${15:1}&${16:1}\\end{pmatrix}",
+        "description": "p44matrix"
+    },
+    "p24matrix": {
+        "prefix": "\\\\p24matrix",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}\\\\\\\\${3:1}&${4:1}\\\\\\\\${5:1}&${6:1}\\\\\\\\${7:1}&${8:1}\\end{pmatrix}",
+        "description": "p24matrix"
+    },
+    "p34matrix": {
+        "prefix": "\\\\p34matrix",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}&${3:1}\\\\\\\\${4:1}&${5:1}&${6:1}\\\\\\\\${7:1}&${8:1}&${9:1}\\\\\\\\${10:1}&${11:1}&${12:1}\\end{pmatrix}",
+        "description": "p34matrix"
     }
 }
