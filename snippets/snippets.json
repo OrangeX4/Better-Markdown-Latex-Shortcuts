@@ -128,16 +128,25 @@
         "prefix": "\\\\aligned",
         "body": [
             "\\begin{aligned}",
-            "${1:${TM_SELECTED_TEXT}}",
+            "${1:${TM_SELECTED_TEXT}} \\\\\\\\",
             "\\end{aligned}"
         ],
         "description": "A scope of aligned"
+    },
+    "cases": {
+        "prefix": "\\\\cases",
+        "body": [
+            "\\begin{cases}",
+            "${1:${TM_SELECTED_TEXT}} \\\\\\\\",
+            "\\end{cases}"
+        ],
+        "description": "A scope of cases"
     },
     "matrix": {
         "prefix": "\\\\matrix",
         "body": [
             "\\begin{matrix}",
-            "${1:${TM_SELECTED_TEXT}}",
+            "${1:${TM_SELECTED_TEXT}} \\\\\\\\",
             "\\end{matrix}"
         ],
         "description": "A scope of matrix"
@@ -401,5 +410,10 @@
         "prefix": "\\\\p34matrix",
         "body": "\\begin{pmatrix}${1:1}&${2:1}&${3:1}\\\\\\\\${4:1}&${5:1}&${6:1}\\\\\\\\${7:1}&${8:1}&${9:1}\\\\\\\\${10:1}&${11:1}&${12:1}\\end{pmatrix}",
         "description": "p34matrix"
+    },
+    "frac": {
+        "prefix": "\\\\frac",
+        "body": "\\frac{${1:${TM_SELECTED_TEXT}}}{$2}",
+        "description": "frac"
     }
 }
