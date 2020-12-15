@@ -415,5 +415,40 @@
         "prefix": "\\\\frac",
         "body": "\\frac{${1:${TM_SELECTED_TEXT}}}{$2}",
         "description": "frac"
+    },
+    "sqrt": {
+        "prefix": "\\\\sqrt",
+        "body": "\\sqrt{${1:${TM_SELECTED_TEXT}}}",
+        "description": "sqrt"
+    },
+    "sqrt3": {
+        "prefix": "\\\\sqrt3",
+        "body": "\\sqrt[3]{${1:${TM_SELECTED_TEXT}}}",
+        "description": "sqrt"
+    },
+    "sqrtn": {
+        "prefix": "\\\\sqrtn",
+        "body": "\\sqrt[${2:n}]{${1:${TM_SELECTED_TEXT}}}",
+        "description": "sqrt"
+    },
+    "pi2": {
+        "prefix": "\\\\pi2",
+        "body": "\\frac{\\pi}{2}",
+        "description": "pi2"
+    },
+    "pi3": {
+        "prefix": "\\\\pi3",
+        "body": "\\frac{\\pi}{3}",
+        "description": "pi3"
+    },
+    "pi4": {
+        "prefix": "\\\\pi4",
+        "body": "\\frac{\\pi}{4}",
+        "description": "pi4"
+    },
+    "pi6": {
+        "prefix": "\\\\pi6",
+        "body": "\\frac{\\pi}{6}",
+        "description": "pi6"
     }
 }
