@@ -450,5 +450,30 @@
         "prefix": "\\\\pi6",
         "body": "\\frac{\\pi}{6}",
         "description": "pi6"
+    },
+    "-1": {
+        "prefix": "\\\\-1",
+        "body": "^{-1}",
+        "description": "-1"
+    },
+    "N": {
+        "prefix": "\\\\N",
+        "body": "\\mathbb{N}",
+        "description": "N"
+    },
+    "Q": {
+        "prefix": "\\\\Q",
+        "body": "\\mathbb{Q}",
+        "description": "Q"
+    },
+    "Z": {
+        "prefix": "\\\\Z",
+        "body": "\\mathbb{Z}",
+        "description": "Z"
+    },
+    "C": {
+        "prefix": "\\\\C",
+        "body": "\\mathbb{C}",
+        "description": "C"
     }
 }
