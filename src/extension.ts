@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode'
+import * as utils from './utils'
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -17,7 +18,6 @@ export function activate(context: vscode.ExtensionContext) {
             let sel = editor.selections
             if (sel.length === 0) { return }
             editor.edit((edit) => {
-                if (!editor) { return }
                 sel.forEach((selection) => {
                     let start = selection.start
                     let text = doc.getText(selection)
@@ -41,7 +41,6 @@ export function activate(context: vscode.ExtensionContext) {
             let sel = editor.selections
             if (sel.length === 0) { return }
             editor.edit((edit) => {
-                if (!editor) { return }
                 sel.forEach((selection) => {
                     let end = selection.end
                     let text = doc.getText(selection)
@@ -65,7 +64,6 @@ export function activate(context: vscode.ExtensionContext) {
             let sel = editor.selections
             if (sel.length === 0) { return }
             editor.edit((edit) => {
-                if (!editor) { return }
                 sel.forEach((selection) => {
                     let range = new vscode.Range(
                         new vscode.Position(selection.start.line, selection.start.character),
@@ -93,7 +91,6 @@ export function activate(context: vscode.ExtensionContext) {
             let sel = editor.selections
             if (sel.length === 0) { return }
             editor.edit((edit) => {
-                if (!editor) { return }
                 sel.forEach((selection) => {
                     let range = new vscode.Range(
                         new vscode.Position(selection.start.line, selection.start.character - 1),
@@ -116,9 +113,32 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.singleCursor', () => {
             let editor = vscode.window.activeTextEditor
-            
             if (!editor) { return }
             editor.selections = [editor.selection]
+        })
+    )
+    context.subscriptions.push(
+        vscode.commands.registerCommand('better-markdown-latex-shortcuts.equal', () => {
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            let doc = editor.document
+            let selection = editor.selection
+            let text = doc.getText(selection)
+            editor.edit((edit) => {
+                edit.insert(selection.end, utils.equal(text))
+            })
+        })
+    )
+    context.subscriptions.push(
+        vscode.commands.registerCommand('better-markdown-latex-shortcuts.replace', () => {
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            let doc = editor.document
+            let selection = editor.selection
+            let text = doc.getText(selection)
+            editor.edit((edit) => {
+                edit.replace(selection, utils.replace(text))
+            })
         })
     )
 }
