@@ -15,3 +15,4 @@ All notable changes to the "better-markdown-latex-shortcuts" extension will be d
 - 1.2.1 Add vector
 - 1.2.3 Add pmatrix
 - 1.2.7 Add pi and sqrt
+- 1.3.0 Add Calculator function

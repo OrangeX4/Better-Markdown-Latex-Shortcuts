@@ -6,6 +6,14 @@ Similarly to `Alt + ↑↓`, you can press `Alt + ← →` to move what you sele
 
 You can also press `Ctrl + Alt + U` to single the selections.
 
+**You can press `Shift + Ctrl + Alt + E / R` to calculate the selection!**
+
+**You can press `Shift + Ctrl + Alt + E / R` to calculate the selection!**
+
+**You can press `Shift + Ctrl + Alt + E / R` to calculate the selection!**
+
+It is necessary to say the important thing three times.
+
 # Install
 
 Search `Orangex4` in vscode extensions market and install the one called "Better Markdown&Latex Shortcuts".
