@@ -1,34 +1,12 @@
-import * as mathjs from 'mathjs'
-
-export function equal(text: string) {
-    let value = 0
-    try {
-        value = mathjs.evaluate(toFrac(toPow(toFrac(toMultiply(removeDisplaystyle(text))))))
-    } catch {
-        return ''
-    }
-    return '=' + value
-}
-
-export function replace(text: string) {
-    let value = 0
-    try {
-        value = mathjs.evaluate(toFrac(toPow(toFrac(toMultiply(removeDisplaystyle(text))))))
-    } catch {
-        return text
-    }
-    return '' + value
-}
-
-function removeDisplaystyle(text: string):string {
+function removeDisplaystyle(text) {
     return text.replace(/\\displaystyle/g, '')
 }
 
-function toMultiply(text: string):string {
+function toMultiply(text) {
     return text.replace(/\\times/g, '*')
 }
 
-function toPow(text: string):string {
+function toPow(text) {
     let old = text
     let pattern = /\^{([+-]?[0-9\s\*/+-^()i]+)}/g
     let match = text.match(pattern)
@@ -46,7 +24,7 @@ function toPow(text: string):string {
     }
 }
 
-function toFrac(text: string):string {
+function toFrac(text) {
     let old = text
     let pattern = /\\frac{([0-9\s\*/+-^()i]+)}{([0-9\*/+-^()i]+)}/g
     let match = text.match(pattern)
@@ -63,3 +41,7 @@ function toFrac(text: string):string {
         return toFrac(text)
     }
 }
+
+let text = String.raw`\frac{\frac{2\frac{2^{3\frac{1\times 3}{4}}+4}{3}+3}{4}}{2}+\frac{1+3*6}{2}`
+
+console.log(toFrac(toPow(toFrac(toMultiply(removeDisplaystyle(text))))))
