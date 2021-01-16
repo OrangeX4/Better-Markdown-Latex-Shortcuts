@@ -13,7 +13,8 @@
     ],
     "icon": "images/profile.png",
     "activationEvents": [
-        "onLanguage:markdown"
+        "onLanguage:markdown",
+        "onLanguage:latex"
     ],
     "main": "./out/extension.js",
     "contributes": {
@@ -22,25 +23,25 @@
                 "command": "better-markdown-latex-shortcuts.copyToRight",
                 "key": "Shift+Alt+Right",
                 "mac": "Shift+Alt+Right",
-                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection"
+                "when": "editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.copyToLeft",
                 "key": "Shift+Alt+Left",
                 "mac": "Shift+Alt+Left",
-                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection"
+                "when": "editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.moveToRight",
                 "key": "Alt+Right",
                 "mac": "Alt+Right",
-                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection"
+                "when": "editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.moveToLeft",
                 "key": "Alt+Left",
                 "mac": "Alt+Left",
-                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection"
+                "when": "editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.singleCursor",
@@ -52,6 +53,10 @@
         "snippets": [
             {
                 "language": "markdown",
+                "path": "./snippets/snippets.json"
+            },
+            {
+                "language": "latex",
                 "path": "./snippets/snippets.json"
             }
         ]
