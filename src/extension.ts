@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode'
-import * as utils from './utils'
+import * as calculator from './calculator'
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -125,7 +125,7 @@ export function activate(context: vscode.ExtensionContext) {
             let selection = editor.selection
             let text = doc.getText(selection)
             editor.edit((edit) => {
-                edit.insert(selection.end, utils.equal(text))
+                edit.insert(selection.end, calculator.equal(text))
             })
         })
     )
@@ -137,8 +137,18 @@ export function activate(context: vscode.ExtensionContext) {
             let selection = editor.selection
             let text = doc.getText(selection)
             editor.edit((edit) => {
-                edit.replace(selection, utils.replace(text))
+                edit.replace(selection, calculator.replace(text))
             })
+        })
+    )
+    context.subscriptions.push(
+        vscode.commands.registerCommand('better-markdown-latex-shortcuts.define', () => {
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            let doc = editor.document
+            let selection = editor.selection
+            let text = doc.getText(selection)
+            calculator.define(text)
         })
     )
 }

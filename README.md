@@ -6,13 +6,13 @@ Similarly to `Alt + ↑↓`, you can press `Alt + ← →` to move what you sele
 
 You can also press `Ctrl + Alt + U` to single the selections.
 
-**You can press `Shift + Ctrl + Alt + E / R` to calculate the selection!**
+There are many snippets in the extension and you can input `\\` and get the auto-complete function.
 
-**You can press `Shift + Ctrl + Alt + E / R` to calculate the selection!**
+**You can press `Shift + Ctrl + Alt + D` to define the selection.**
 
-**You can press `Shift + Ctrl + Alt + E / R` to calculate the selection!**
+**You can press `Shift + Ctrl + Alt + E` to calculate the selection.**
 
-It is necessary to say the important thing three times.
+**You can press `Shift + Ctrl + Alt + R` to replace the selection.**
 
 # Install
 
@@ -22,21 +22,25 @@ Search `Orangex4` in vscode extensions market and install the one called "Better
 
 # Display
 
+## Calculator
+
+![Calculator](https://ae01.alicdn.com/kf/U775488c7dd0a4fa682ffed6b36ef12ab1.jpg)
+
 ## Copy
 
-![copy](https://s3.ax1x.com/2020/12/02/DIg8ds.gif)
+![copy](https://ae01.alicdn.com/kf/U03ce2e8b468c49d4b80f5399c2290ff72.jpg)
 
 ## Multicopy
 
-![multicopy](https://s3.ax1x.com/2020/12/02/DIgGon.gif)
+![multicopy](https://ae01.alicdn.com/kf/U8e2d3c2e81264cb4a52d9dd2bab65eb0z.jpg)
 
 ## Move
 
-![move](https://s3.ax1x.com/2020/12/02/DIgYiq.gif)
+![move](https://ae01.alicdn.com/kf/Ud043e489d79745469b7cca5bf59a45d63.jpg)
 
 ## Single Selections
 
-![single](https://s3.ax1x.com/2020/12/02/DIgtJ0.gif)
+![single](https://ae01.alicdn.com/kf/U9d8f4514fcbc4aa585e4ec98d177b8fb4.jpg)
 
 # Snippets
 
@@ -71,6 +75,8 @@ Search `Orangex4` in vscode extensions market and install the one called "Better
 
 # Display
 
+![](https://ae01.alicdn.com/kf/U649466346e7a45368747001600b89921s.jpg)
+
 ![](https://s3.ax1x.com/2020/12/03/D7Btm9.gif)
 
 ![](https://s3.ax1x.com/2020/12/03/D7BNwR.gif)
@@ -78,6 +84,10 @@ Search `Orangex4` in vscode extensions market and install the one called "Better
 ![](https://s3.ax1x.com/2020/12/03/D7BJOJ.gif)
 
 # Display (Source)
+
+## Calculator
+
+![Calculator](images/calculator.gif)
 
 ## Copy
 
