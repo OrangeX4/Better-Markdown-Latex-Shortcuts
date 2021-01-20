@@ -10,7 +10,7 @@
         "math",
         "shortcut"
     ],
-    "version": "1.4.0",
+    "version": "1.4.1",
     "engines": {
         "vscode": "^1.51.0"
     },

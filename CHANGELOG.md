@@ -2,7 +2,7 @@
 
 All notable changes to the "better-markdown-latex-shortcuts" extension will be documented in this file.
 
-## [Unreleased]
+## [Released]
 
 - 1.0.0 Initial release
 - 1.0.1 Add copying and moving function
@@ -17,3 +17,4 @@ All notable changes to the "better-markdown-latex-shortcuts" extension will be d
 - 1.2.7 Add pi and sqrt
 - 1.3.0 Add Calculator function
 - 1.4.0 Add More Calculator function
+- 1.4.1 Update README
