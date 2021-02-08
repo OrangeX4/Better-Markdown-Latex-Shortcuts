@@ -4,6 +4,8 @@ import * as vscode from 'vscode'
 import * as calculator from './calculator'
 import * as paster from './paster'
 import * as path from 'path'
+import * as upimg from 'upimg'
+import * as fs from 'fs'
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -155,11 +157,34 @@ export function activate(context: vscode.ExtensionContext) {
     )
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.paste', () => {
-            // vscode.window.showInformationMessage('paste')
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             const imgPath = path.join((process.env.HOME || process.env.USERPROFILE) as string, 'better-markdown-latex-shortcuts-img.png')
-            paster.saveAndPaste(imgPath)
+            paster.saveAndPaste(imgPath, () => {
+                upimg.toutiao
+                    .upload(imgPath)
+                    .then(response => {
+                        console.log(response)
+                        if (response.success) {
+                            let editor = vscode.window.activeTextEditor
+                            if (!editor) { return }
+                            editor.edit((edit) => {
+                                let editor = vscode.window.activeTextEditor
+                                if (!editor) { return }
+                                let selection = editor.selection
+                                if (selection.isEmpty) {
+                                    edit.insert(selection.start, `![](${response.url})`)
+                                } else {
+                                    edit.replace(selection, `![${editor.document.getText(selection)}](${response.url})`)
+                                }
+                            })
+                        } else {
+                            vscode.window.showErrorMessage(response.message)
+                        }
+                        fs.unlinkSync(imgPath)
+                    })
+                    .catch(err => console.error(err.message))
+            })
         })
     )
 }

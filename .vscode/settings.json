@@ -12,6 +12,7 @@
         "Multicopy",
         "ascript",
         "executionpolicy",
+        "maxsize",
         "nologo",
         "noninteractive",
         "noprofile",

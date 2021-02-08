@@ -1,3 +1,11 @@
+# 剪贴板图片自动上传图床
+
+使用快捷键 "Shift + Ctrl + Alt + V" 可以将剪贴板内的图片自动上传到头条图床, 并以 Markdown 形式粘贴在当前位置.
+
+代码参考 [vscode-paste-image](https://github.com/mushanshitiancai/vscode-paste-image) 和 [upimg](https://www.npmjs.com/package/upimg).
+
+![](https://p.pstatp.com/origin/137df0001b5db431ffb9f)
+
 # 行内复制与移动
 
 ## 复制

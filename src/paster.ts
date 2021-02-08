@@ -23,16 +23,15 @@ class Logger {
     }
 }
 
-export function saveAndPaste(imagePath: string) {
+export function saveAndPaste(imagePath: string, callback: () => void) {
     // save image and insert to current edit file
-    saveClipboardImageToFileAndGetPath(imagePath, (imagePath, imagePathReturnByScript) => {
-        if (!imagePathReturnByScript) { return '' }
+    saveClipboardImageToFileAndGetPath(imagePath, (imagePathReturnByScript) => {
+        if (!imagePathReturnByScript) { return }
         if (imagePathReturnByScript === 'no image') {
             Logger.showInformationMessage('There is not an image in the clipboard.')
-            return ''
+            return
         }
-        
-        return imagePath
+        callback()
     })
 }
 
@@ -40,7 +39,7 @@ export function saveAndPaste(imagePath: string) {
 /**
  * use applescript to save image from clipboard and get file path
  */
-function saveClipboardImageToFileAndGetPath(imagePath: string, cb: (imagePath: string, imagePathFromScript: string) => void) {
+function saveClipboardImageToFileAndGetPath(imagePath: string, cb: (imagePathFromScript: string) => void) {
     if (!imagePath) { return }
 
     let platform = process.platform
@@ -75,7 +74,7 @@ function saveClipboardImageToFileAndGetPath(imagePath: string, cb: (imagePath: s
             // console.log('exit', code, signal);
         })
         powershell.stdout.on('data', function (data: Buffer) {
-            cb(imagePath, data.toString().trim())
+            cb(data.toString().trim())
         })
     }
     else if (platform === 'darwin') {
@@ -90,7 +89,7 @@ function saveClipboardImageToFileAndGetPath(imagePath: string, cb: (imagePath: s
             // console.log('exit',code,signal);
         })
         ascript.stdout.on('data', function (data: Buffer) {
-            cb(imagePath, data.toString().trim())
+            cb(data.toString().trim())
         })
     } else {
         // Linux 
@@ -110,7 +109,7 @@ function saveClipboardImageToFileAndGetPath(imagePath: string, cb: (imagePath: s
                 Logger.showInformationMessage('You need to install xclip command first.')
                 return
             }
-            cb(imagePath, result)
+            cb(result)
         })
     }
 }
