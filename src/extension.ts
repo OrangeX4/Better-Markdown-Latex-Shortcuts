@@ -2,6 +2,8 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode'
 import * as calculator from './calculator'
+import * as paster from './paster'
+import * as path from 'path'
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -149,6 +151,15 @@ export function activate(context: vscode.ExtensionContext) {
             let selection = editor.selection
             let text = doc.getText(selection)
             calculator.define(text)
+        })
+    )
+    context.subscriptions.push(
+        vscode.commands.registerCommand('better-markdown-latex-shortcuts.paste', () => {
+            // vscode.window.showInformationMessage('paste')
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            const imgPath = path.join((process.env.HOME || process.env.USERPROFILE) as string, 'better-markdown-latex-shortcuts-img.png')
+            paster.saveAndPaste(imgPath)
         })
     )
 }

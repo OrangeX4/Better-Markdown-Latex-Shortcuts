@@ -72,6 +72,12 @@
                 "key": "Shift+Ctrl+Alt+D",
                 "mac": "Shift+Cmd+Alt+D",
                 "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
+            },
+            {
+                "command": "better-markdown-latex-shortcuts.paste",
+                "key": "Shift+Ctrl+Alt+V",
+                "mac": "Shift+Cmd+Alt+V",
+                "when": "resourceLangId == markdown && editorTextFocus"
             }
         ],
         "snippets": [
