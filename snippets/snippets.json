@@ -461,6 +461,11 @@
         "body": "\\mathbb{N}",
         "description": "N"
     },
+    "R": {
+        "prefix": "\\\\R",
+        "body": "\\mathbb{R}",
+        "description": "R"
+    },
     "Q": {
         "prefix": "\\\\Q",
         "body": "\\mathbb{Q}",
@@ -475,5 +480,10 @@
         "prefix": "\\\\C",
         "body": "\\mathbb{C}",
         "description": "C"
+    },
+    "omission": {
+        "prefix": "\\\\omission",
+        "body": "\\begin{pmatrix}${1:1}&${2:1}&\\cdots&${4:1}\\\\\\\\${5:1}&${6:1}&\\cdots&${8:1}\\\\\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\\\${13:1}&${14:1}&\\cdots&${16:1}\\end{pmatrix}",
+        "description": "p44matrix"
     }
 }
