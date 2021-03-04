@@ -55,6 +55,12 @@
 
 ![Calculator](https://ae01.alicdn.com/kf/U775488c7dd0a4fa682ffed6b36ef12ab1.jpg)
 
+## 矩阵初等变换功能
+
+使用 `\xrightarrow[c_1=c_1+c_2]{r_1\leftrightarrow r_2, 3r_3}` 此类语法, 即可进行初等变换操作.
+
+![](https://ae01.alicdn.com/kf/U86962d71af644a06ace91f344be6a52cu.jpg)
+
 PS：运算相关支持使用的是 “Mathjs” 库，一切 Mathjs 表达式均可以正常使用。
 
 # Snippets

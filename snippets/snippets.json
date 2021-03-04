@@ -485,5 +485,10 @@
         "prefix": "\\\\omission",
         "body": "\\begin{pmatrix}${1:1}&${2:1}&\\cdots&${4:1}\\\\\\\\${5:1}&${6:1}&\\cdots&${8:1}\\\\\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\\\${13:1}&${14:1}&\\cdots&${16:1}\\end{pmatrix}",
         "description": "p44matrix"
+    },
+    "xrightarrow": {
+        "prefix": "\\\\xrightarrow",
+        "body": "\\\\xrightarrow{${1}}",
+        "description": "xrightarrow"
     }
 }

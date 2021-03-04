@@ -49,3 +49,4 @@ function toFrac(text) {
 let text = String.raw`\frac{\frac{2\frac{2^{3\frac{1\times 3}{4}}+4}{3}+3}{4}}{2}+\frac{1+3*6}{2}`
 
 console.log(toFrac(toPow(toFrac(toMultiply(toPi(removeDisplaystyle(text)))))))
+
