@@ -28,6 +28,16 @@ export function equal(text: string): string {
     }
 
     try {
+        const pattern = /truthtable\(([()=>{}['",\]&|\s\w\\]+)\)/
+        const match = pattern.exec(text)
+        if (match) {
+            return '\n' + eval('truthtable(' + match[1] + ')')
+        }
+    } catch {
+
+    }
+
+    try {
         value = evaluate(text)
     } catch {
         try {
@@ -322,4 +332,93 @@ function elementaryTransform(text: string, isWrap: string): string | null {
             }
         }
     }
+}
+
+function imply(p: boolean, q: boolean) {
+    if (!p) {
+        return true
+    } else if (q) {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+function onlyif(p: boolean, q: boolean) {
+    if (p && q) {
+        return true
+    } else if (!p && !q) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function xor(p: boolean, q: boolean) {
+    return !onlyif(p, q)
+}
+
+
+function boolToString(p: boolean) {
+    return p ? 'T' : 'F'
+}
+
+function truthtable(func: any, set: string[]) {
+    let input = {} as any
+    let output = ''
+    for (let i = 0; i < set.length; i++) {
+        input[set[i]] = false
+    }
+
+    function print(text: string) {
+        output += text + '\n'
+    }
+
+    function block(begin: number, end: number) {
+        if (begin < end - 1) {
+            let current = set[begin]
+            input[current] = false
+            block(begin + 1, end)
+
+            input[current] = true
+            block(begin + 1, end)
+
+        } else {
+
+            function printOut() {
+                let out = ''
+                for (let i = 0; i < end; i++) {
+                    out = out + '| ' + boolToString(input[set[i]]) + ' '
+                }
+                out = out + '| ' + boolToString(func(...Object.values(input).slice(0, -1))) + ' |'
+                print(out)
+            }
+
+            let current = set[begin]
+            input[current] = false
+            printOut()
+
+            input[current] = true
+            printOut()
+        }
+    }
+
+    let out = ''
+    for (let i = 0; i < set.length; i++) {
+        out = out + '| ' + set[i] + ' '
+    }
+    out = out + '|'
+    print(out)
+
+    out = ''
+    for (let i = 0; i < set.length; i++) {
+        out = out + '|---'
+    }
+    out = out + '|'
+    print(out)
+
+    block(0, set.length - 1)
+
+    return output
 }
