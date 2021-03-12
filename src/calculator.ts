@@ -20,7 +20,7 @@ export function equal(text: string): string {
             const pattern = /\\begin{([vbp]matrix)}/
             const match = pattern.exec(text)
             if (match) {
-                return toTexFrac(elementaryTransformation.replace(/pmatrix/g, match[1]).replace(/\*/g, ''))
+                return elementaryTransformation.replace(/pmatrix/g, match[1]).replace(/\*/g, '')
             }
         }
     } catch {
@@ -53,7 +53,7 @@ export function replace(text: string): string {
             const pattern = /\\begin{([vbp]matrix)}/
             const match = pattern.exec(text)
             if (match) {
-                return toTexFrac(elementaryTransformation.replace(/pmatrix/g, match[1]).replace(/\*/g, ''))
+                return elementaryTransformation.replace(/pmatrix/g, match[1]).replace(/\*/g, '')
                 // return elementaryTransformation.replace(/pmatrix/g, match[1])
             }
         }
@@ -107,12 +107,13 @@ function toTexFrac(text: string): string {
     text = _toTexFrac(text, /[(]([\w\s\*/+-^]+)[)]\/([\w\s]+)/g)
     text = _toTexFrac(text, /[(]([\w\s\*/+-^]+)[)]\/[(]([\w\s\*/+-^]+)[)]/g)
 
+    text = removeSpace(text)
     return text
 }
 
 
 function toTex(text: string, isWrap: string): string {
-    text = removeSpace(text)
+    
     text = toTexFrac(text)
     text = removeSpace(text).replace(/\*/g, '\\times ')
     // Replace matrix
@@ -236,7 +237,7 @@ function toMatrix(text: string): string {
 function elementaryTransform(text: string, isWrap: string): string | null {
     text = text.replace(/\s/g, '')
 
-    const pattern = /\\begin{([vbp]matrix)}([\w\*/+-^()i&\\]+)\\end{([vbp]matrix)}(\\xrightarrow|\\xlongequal)(\[([\w_=\s\*/+-^,]+)\])?{([\w_=\s\*/+-^,]+)}/g
+    const pattern = /\\begin{([vbp]matrix)}([\w\*/+-^()i&\\]+)\\end{([vbp]matrix)}(\\xrightarrow|\\xlongequal)(\[([\w_=\s\*/+-^,/()]+)\])?{([\w_=\s\*/+-^,/()]+)}/g
     const match = pattern.exec(text)
     if (match) {
         // const matrix = match[2].split('\\\\').map((line) => line.split('&').map((value) => parseFloat(value)))
@@ -244,8 +245,8 @@ function elementaryTransform(text: string, isWrap: string): string | null {
         const commands = match[6] ? match[7].split(',').concat(match[6].split(',')) : match[7].split(',')
         commands.forEach((command) => { changeMatrix(matrix, command) })
 
-        return '\\begin{pmatrix}' + isWrap +
-            matrix.map((vector) => vector.map((value) => mathjs.simplify(value).toString()).join(' &')).join(' \\\\' + isWrap)
+        return isWrap + '\\begin{pmatrix}' + isWrap +
+            matrix.map((vector) => vector.map((value) => toTexFrac(mathjs.simplify(value).toString())).join(' &')).join(' \\\\' + isWrap)
             + isWrap + '\\end{pmatrix}'
     } else {
         return null
@@ -256,7 +257,7 @@ function elementaryTransform(text: string, isWrap: string): string | null {
             const result = new Array(matrix.length > matrix[0].length ? matrix.length : matrix[0].length).fill('0')
 
             while (true) {
-                const match = /^([0-9-+.]*)(([rc])_([0-9]))/.exec(expression)
+                const match = /^([abdtspqxyz0-9-+/.()]*)(([rc])_([0-9]))/.exec(expression)
 
                 if (!expression || !match || !match[0]) {
                     break
@@ -314,7 +315,7 @@ function elementaryTransform(text: string, isWrap: string): string | null {
             const vector = evaluate(match[1])
             setVector(match[0], vector)
         } else {
-            const match = /^[0-9-+.]*([rc]_[0-9])/.exec(command)
+            const match = /^[abdtspqxyz0-9-+./()]*([rc]_[0-9])/.exec(command)
             if (match && match[1]) {
                 const vector = evaluate(command)
                 setVector(match[1], vector)
