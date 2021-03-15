@@ -371,11 +371,11 @@ function xor(p: boolean, q: boolean) {
 }
 
 
-function boolToString(p: boolean) {
-    return p ? 'T' : 'F'
+function boolToString(p: boolean, boolStr: string[] = ['1', '0']) {
+    return p ? boolStr[0] : boolStr[1]
 }
 
-function truthtable(func: any, set: string[]) {
+function truthtable(func: any, set: string[], boolStr: string[]) {
     let input = {} as any
     let output = ''
     for (let i = 0; i < set.length; i++) {
@@ -400,9 +400,9 @@ function truthtable(func: any, set: string[]) {
             function printOut() {
                 let out = ''
                 for (let i = 0; i < end; i++) {
-                    out = out + '| ' + boolToString(input[set[i]]) + ' '
+                    out = out + '| ' + boolToString(input[set[i]], boolStr) + ' '
                 }
-                out = out + '| ' + boolToString(func(...Object.values(input).slice(0, -1))) + ' |'
+                out = out + '| ' + boolToString(func(...Object.values(input).slice(0, -1)), boolStr) + ' |'
                 print(out)
             }
 

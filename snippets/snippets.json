@@ -490,5 +490,170 @@
         "prefix": "\\\\xrightarrow",
         "body": "\\\\xrightarrow{${1}}",
         "description": "xrightarrow"
+    },
+    "bsa": {
+        "prefix": "\\\\bsa",
+        "body": "\\boldsymbol{a}",
+        "description": "bsa"
+    },
+    "bsA": {
+        "prefix": "\\\\bsA",
+        "body": "\\boldsymbol{A}",
+        "description": "bsA"
+    },
+    "bsb": {
+        "prefix": "\\\\bsb",
+        "body": "\\boldsymbol{b}",
+        "description": "bsb"
+    },
+    "bsB": {
+        "prefix": "\\\\bsB",
+        "body": "\\boldsymbol{B}",
+        "description": "bsB"
+    },
+    "bsc": {
+        "prefix": "\\\\bsc",
+        "body": "\\boldsymbol{c}",
+        "description": "bsc"
+    },
+    "bsC": {
+        "prefix": "\\\\bsC",
+        "body": "\\boldsymbol{C}",
+        "description": "bsC"
+    },
+    "bsd": {
+        "prefix": "\\\\bsd",
+        "body": "\\boldsymbol{d}",
+        "description": "bsd"
+    },
+    "bsD": {
+        "prefix": "\\\\bsD",
+        "body": "\\boldsymbol{D}",
+        "description": "bsD"
+    },
+    "bse": {
+        "prefix": "\\\\bse",
+        "body": "\\boldsymbol{e}",
+        "description": "bse"
+    },
+    "bsE": {
+        "prefix": "\\\\bsE",
+        "body": "\\boldsymbol{E}",
+        "description": "bsE"
+    },
+    "bsf": {
+        "prefix": "\\\\bsf",
+        "body": "\\boldsymbol{f}",
+        "description": "bsf"
+    },
+    "bsF": {
+        "prefix": "\\\\bsF",
+        "body": "\\boldsymbol{F}",
+        "description": "bsF"
+    },
+    "bsg": {
+        "prefix": "\\\\bsg",
+        "body": "\\boldsymbol{g}",
+        "description": "bsg"
+    },
+    "bsG": {
+        "prefix": "\\\\bsG",
+        "body": "\\boldsymbol{G}",
+        "description": "bsG"
+    },
+    "bsi": {
+        "prefix": "\\\\bsi",
+        "body": "\\boldsymbol{i}",
+        "description": "bsi"
+    },
+    "bsI": {
+        "prefix": "\\\\bsI",
+        "body": "\\boldsymbol{I}",
+        "description": "bsI"
+    },
+    "bsj": {
+        "prefix": "\\\\bsj",
+        "body": "\\boldsymbol{j}",
+        "description": "bsj"
+    },
+    "bsJ": {
+        "prefix": "\\\\bsJ",
+        "body": "\\boldsymbol{J}",
+        "description": "bsJ"
+    },
+    "bsk": {
+        "prefix": "\\\\bsk",
+        "body": "\\boldsymbol{k}",
+        "description": "bsk"
+    },
+    "bsK": {
+        "prefix": "\\\\bsK",
+        "body": "\\boldsymbol{K}",
+        "description": "bsK"
+    },
+    "bsr": {
+        "prefix": "\\\\bsr",
+        "body": "\\boldsymbol{r}",
+        "description": "bsr"
+    },
+    "bsR": {
+        "prefix": "\\\\bsR",
+        "body": "\\boldsymbol{R}",
+        "description": "bsR"
+    },
+    "bsv": {
+        "prefix": "\\\\bsv",
+        "body": "\\boldsymbol{v}",
+        "description": "bsv"
+    },
+    "bsV": {
+        "prefix": "\\\\bsV",
+        "body": "\\boldsymbol{V}",
+        "description": "bsV"
+    },
+    "bsx": {
+        "prefix": "\\\\bsx",
+        "body": "\\boldsymbol{x}",
+        "description": "bsx"
+    },
+    "bsX": {
+        "prefix": "\\\\bsX",
+        "body": "\\boldsymbol{X}",
+        "description": "bsX"
+    },
+    "bsy": {
+        "prefix": "\\\\bsy",
+        "body": "\\boldsymbol{y}",
+        "description": "bsy"
+    },
+    "bsY": {
+        "prefix": "\\\\bsY",
+        "body": "\\boldsymbol{Y}",
+        "description": "bsY"
+    },
+    "bsz": {
+        "prefix": "\\\\bsz",
+        "body": "\\boldsymbol{z}",
+        "description": "bsz"
+    },
+    "bsZ": {
+        "prefix": "\\\\bsZ",
+        "body": "\\boldsymbol{Z}",
+        "description": "bsZ"
+    },
+    "bsomega": {
+        "prefix": "\\\\bsomega",
+        "body": "\\boldsymbol{\\omega}",
+        "description": "bsi"
+    },
+    "bsrho": {
+        "prefix": "\\\\bsrho",
+        "body": "\\boldsymbol{\\rho}",
+        "description": "bsrho"
+    },
+    "bsphi": {
+        "prefix": "\\\\bsphi",
+        "body": "\\boldsymbol{\\varphi}",
+        "description": "bsphi"
     }
 }
