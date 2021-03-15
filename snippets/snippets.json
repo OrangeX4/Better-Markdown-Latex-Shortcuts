@@ -611,6 +611,16 @@
         "body": "\\boldsymbol{V}",
         "description": "bsV"
     },
+    "bsu": {
+        "prefix": "\\\\bsu",
+        "body": "\\boldsymbol{u}",
+        "description": "bsu"
+    },
+    "bsU": {
+        "prefix": "\\\\bsU",
+        "body": "\\boldsymbol{U}",
+        "description": "bsU"
+    },
     "bsx": {
         "prefix": "\\\\bsx",
         "body": "\\boldsymbol{x}",
@@ -655,5 +665,49 @@
         "prefix": "\\\\bsphi",
         "body": "\\boldsymbol{\\varphi}",
         "description": "bsphi"
-    }
+    },
+    "ditaa": {
+		"prefix": "\\\\ditaa",
+		"body": [
+			"```ditaa {cmd=true args=[\"-E\"] hide=true}",
+			"${1}",
+			"```"
+		],
+		"description": "ditaa"
+	},
+	"text": {
+		"prefix": "\\\\text",
+		"body": [
+			"\\text{${1}}"
+		],
+		"description": "text"
+	},
+	"dd": {
+		"prefix": "\\\\dd",
+		"body": [
+			"\\frac{{\\rm d}}{{\\rm d}${1}}"
+		],
+		"description": "text"
+	},
+	"ddt": {
+		"prefix": "\\\\ddt",
+		"body": [
+			"\\frac{{\\rm d}}{{\\rm d}t}"
+		],
+		"description": "text"
+	},
+	"phi": {
+		"prefix": "\\\\phi",
+		"body": [
+			"\\varphi"
+		],
+		"description": "phi"
+	},
+	"ms": {
+		"prefix": "\\\\ms",
+		"body": [
+			" \\ \\text{${1:m}}/\\text{${2:s}}"
+		],
+		"description": "m per s"
+	},
 }
