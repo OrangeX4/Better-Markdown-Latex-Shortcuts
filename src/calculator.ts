@@ -28,7 +28,7 @@ export function equal(text: string): string {
     }
 
     try {
-        const pattern = /truthtable\(([()=>{}['",\]&|\s\w\\]+)\)/
+        const pattern = /truthtable\(([!()=>{}['",\]&|\s\w\\]+)\)/
         const match = pattern.exec(text)
         if (match) {
             return '\n' + eval('truthtable(' + match[1] + ')')
@@ -70,6 +70,17 @@ export function replace(text: string): string {
     } catch {
 
     }
+
+    try {
+        const pattern = /truthtable\(([!()=>{}['",\]&|\s\w\\]+)\)/
+        const match = pattern.exec(text)
+        if (match) {
+            return '\n' + eval('truthtable(' + match[1] + ')')
+        }
+    } catch {
+
+    }
+
 
     try {
         value = evaluate(text)
