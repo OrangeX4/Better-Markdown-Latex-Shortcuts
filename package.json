@@ -10,7 +10,7 @@
         "math",
         "shortcut"
     ],
-    "version": "1.6.9",
+    "version": "1.7.0",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -20,7 +20,12 @@
     "icon": "images/profile.png",
     "activationEvents": [
         "onLanguage:markdown",
-        "onLanguage:latex"
+        "onLanguage:latex",
+        "onLanguage:python",
+        "onLanguage:javascript",
+        "onLanguage:typescript",
+        "onLanguage:c++",
+        "onLanguage:json"
     ],
     "main": "./out/extension.js",
     "contributes": {
@@ -41,13 +46,25 @@
                 "command": "better-markdown-latex-shortcuts.moveToRight",
                 "key": "Alt+Right",
                 "mac": "Alt+Right",
-                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
+                "when": "editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.moveToLeft",
                 "key": "Alt+Left",
                 "mac": "Alt+Left",
-                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
+                "when": "editorTextFocus && editorHasSelection"
+            },
+            {
+                "command": "better-markdown-latex-shortcuts.moveToRightQuickly",
+                "key": "Ctrl+Alt+Right",
+                "mac": "Cmd+Alt+Right",
+                "when": "editorTextFocus && editorHasSelection"
+            },
+            {
+                "command": "better-markdown-latex-shortcuts.moveToLeftQuickly",
+                "key": "Ctrl+Alt+Left",
+                "mac": "Cmd+Alt+Left",
+                "when": "editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.singleCursor",

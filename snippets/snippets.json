@@ -20,16 +20,6 @@
         ],
 		"description": "subscript"
 	},
-	"subscript": {
-		"prefix": "\\\\-",
-		"body": "_{${1:${TM_SELECTED_TEXT}}}",
-		"description": "subscript"
-	},
-	"superscript": {
-		"prefix": "\\\\6",
-		"body": "^{${1:${TM_SELECTED_TEXT}}}",
-		"description": "superscript"
-	},
 	"cdots": {
 		"prefix": "\\\\...",
 		"body": "\\cdots ",
@@ -60,6 +50,13 @@
 			"{\\rm d}y"
 		],
 		"description": "dy"
+	},
+	"dt": {
+		"prefix": "\\\\dt",
+		"body": [
+			"{\\rm d}t"
+		],
+		"description": "dt"
 	},
 	"set": {
 		"prefix": "\\\\set",
@@ -102,20 +99,6 @@
             "${1:\\alpha}${3:_}1,${1:\\alpha}${3:_}2,\\cdots,${1:\\alpha}${3:_}${2:n}"
 		],
         "description": "A line with comma"
-    },
-	"mline": {
-		"prefix": "\\\\mline",
-		"body": [
-			"${1:\\alpha} &${2:\\beta} &\\cdots &${3:\\lambda} \\\\\\\\"
-		],
-        "description": "A line of matrix"
-    },
-	"smline": {
-		"prefix": "\\\\smline",
-		"body": [
-			"${1:\\alpha}_1 &${1:\\alpha}_2 &\\cdots &${1:\\alpha}_${2:n} \\\\\\\\"
-		],
-        "description": "A line of matrix with subscript"
     },
 	"vdots": {
 		"prefix": "\\\\vdots",
@@ -723,42 +706,42 @@
     "pd": {
 		"prefix": "\\\\pd",
 		"body": [
-            "\\overset{\\cdot}{${1:x}}",
+            "\\overset{\\cdot}{${1:x}}"
 		],
 		"description": "pd"
 	},
 	"pdd": {
 		"prefix": "\\\\pdd",
 		"body": [
-			"\\overset{\\cdot\\cdot}{${1:x}}",
+			"\\overset{\\cdot\\cdot}{${1:x}}"
 		],
 		"description": "pdd"
 	},
 	"partial": {
 		"prefix": "\\\\partial",
 		"body": [
-			"\\frac{\\partial ${1}}{\\partial ${2}}",
+			"\\frac{\\partial ${1}}{\\partial ${2}}"
 		],
 		"description": "partial"
 	},
 	"parx": {
 		"prefix": "\\\\parx",
 		"body": [
-			"\\frac{\\partial ${1}}{\\partial x}",
+			"\\frac{\\partial ${1}}{\\partial x}"
 		],
 		"description": "parx"
 	},
 	"pary": {
 		"prefix": "\\\\pary",
 		"body": [
-			"\\frac{\\partial ${1}}{\\partial y}",
+			"\\frac{\\partial ${1}}{\\partial y}"
 		],
 		"description": "pary"
 	},
 	"parz": {
 		"prefix": "\\\\parz",
 		"body": [
-			"\\frac{\\partial ${1}}{\\partial z}",
+			"\\frac{\\partial ${1}}{\\partial z}"
 		],
 		"description": "parz"
 	}

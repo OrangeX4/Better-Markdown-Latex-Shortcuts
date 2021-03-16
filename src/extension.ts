@@ -6,6 +6,8 @@ import * as paster from './paster'
 import * as path from 'path'
 import * as upimg from 'upimg'
 import * as fs from 'fs'
+import { re } from 'mathjs'
+import math = require('mathjs')
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -145,6 +147,118 @@ export function activate(context: vscode.ExtensionContext) {
                         return new vscode.Selection(
                             new vscode.Position(start.line, start.character - 1),
                             new vscode.Position(end.line, end.character - 1))
+                    })
+                }
+                isMovable = true
+            })
+        })
+    )
+    context.subscriptions.push(
+        vscode.commands.registerCommand('better-markdown-latex-shortcuts.moveToRightQuickly', () => {
+            if (!isMovable) {
+                return
+            }
+            
+            // Begin to move
+            isMovable = false
+
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            let doc = editor.document
+            let sel = editor.selections
+            if (sel.length === 0) { return }
+
+            let isJump = false
+            let count = 1
+
+            editor.edit((edit) => {
+                sel.forEach((selection) => {
+                    let line = doc.lineAt(selection.end)
+                    if (line.range.end.character === selection.end.character) {
+                        isJump = true
+                    }
+                    if (!isJump) {
+                        let substr = line.text.slice(selection.end.character, line.text.length)
+                        let match = substr.match(/^([A-Z][a-z]+)|([A-Z]+)|(_*[a-z]+)|(_+)/)
+                        if (match && match[0] === substr.slice(0, match[0].length)) {
+                            count = match[0].length
+                        }
+                        let range = new vscode.Range(
+                            new vscode.Position(selection.start.line, selection.start.character),
+                            new vscode.Position(selection.end.line, selection.end.character + count))
+                        let text = doc.getText(range)
+                        edit.replace(range, text.slice(text.length - count, text.length) + text.slice(0, text.length - count))
+                    }
+                })
+            }).then(() => {
+                if (!isJump) {
+                    if (!editor) { return }
+                    editor.selections = sel.map((selection) => {
+                        let start = selection.start
+                        let end = selection.end
+                        return new vscode.Selection(
+                            new vscode.Position(start.line, start.character + count),
+                            new vscode.Position(end.line, end.character + count))
+                    })
+                }
+                isMovable = true
+            })
+        })
+    )
+    context.subscriptions.push(
+        vscode.commands.registerCommand('better-markdown-latex-shortcuts.moveToLeftQuickly', () => {
+            if (!isMovable) {
+                return
+            }
+            
+            // Begin to move
+            isMovable = false
+
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            let doc = editor.document
+            let sel = editor.selections
+            if (sel.length === 0) { return }
+
+            let isJump = false
+            let count = 1
+
+            editor.edit((edit) => {
+                sel.forEach((selection) => {
+                    let line = doc.lineAt(selection.start)
+                    if (line.range.start.character === selection.start.character) {
+                        isJump = true
+                    }
+                    if (!isJump) {
+                        let substr = line.text.slice(0, selection.start.character)                        
+                        let match = substr.match(/^([A-Z][a-z]+)|([A-Z]+)|(_*[a-z]+)|(_+)/g)
+                        let lastStr = ''
+                        if (match) {
+                            lastStr = match[match.length - 1]
+                        }
+                        if (match && lastStr === substr.slice(substr.length - lastStr.length, substr.length)) {
+                            count = lastStr.length
+                        }
+
+                        let range = new vscode.Range(
+                            new vscode.Position(selection.start.line, selection.start.character - count),
+                            new vscode.Position(selection.end.line, selection.end.character))
+                        let text = doc.getText(range)
+                        console.log(count)
+                        console.log(text)
+                        console.log(text.slice(count, text.length) + text.slice(0, count))
+                        edit.replace(range, text.slice(count, text.length) + text.slice(0, count))
+                    }
+                })
+            }).then(() => {
+                if (!isJump) {
+                    if (!editor) { return }
+                    editor.selections = sel.map((selection) => {
+                        let start = selection.start
+                        let end = selection.end
+                        return new vscode.Selection(
+                            new vscode.Position(start.line, start.character - count),
+                            new vscode.Position(end.line, end.character - count))
                     })
                 }
                 isMovable = true
