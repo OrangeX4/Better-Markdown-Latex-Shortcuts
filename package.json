@@ -34,13 +34,13 @@
                 "command": "better-markdown-latex-shortcuts.copyToRight",
                 "key": "Shift+Alt+Right",
                 "mac": "Shift+Alt+Right",
-                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
+                "when": "editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.copyToLeft",
                 "key": "Shift+Alt+Left",
                 "mac": "Shift+Alt+Left",
-                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
+                "when": "editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.moveToRight",
@@ -70,7 +70,7 @@
                 "command": "better-markdown-latex-shortcuts.singleCursor",
                 "key": "Ctrl+Alt+U",
                 "mac": "Cmd+Alt+U",
-                "when": "resourceLangId == markdown && editorTextFocus || resourceLangId == latex && editorTextFocus"
+                "when": "editorTextFocus && editorHasSelection"
             },
             {
                 "command": "better-markdown-latex-shortcuts.equal",
