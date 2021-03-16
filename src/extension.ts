@@ -6,8 +6,6 @@ import * as paster from './paster'
 import * as path from 'path'
 import * as upimg from 'upimg'
 import * as fs from 'fs'
-import { re } from 'mathjs'
-import math = require('mathjs')
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -244,9 +242,6 @@ export function activate(context: vscode.ExtensionContext) {
                             new vscode.Position(selection.start.line, selection.start.character - count),
                             new vscode.Position(selection.end.line, selection.end.character))
                         let text = doc.getText(range)
-                        console.log(count)
-                        console.log(text)
-                        console.log(text.slice(count, text.length) + text.slice(0, count))
                         edit.replace(range, text.slice(count, text.length) + text.slice(0, count))
                     }
                 })
