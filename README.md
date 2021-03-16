@@ -63,6 +63,32 @@
 
 PS：运算相关支持使用的是 “Mathjs” 库，一切 Mathjs 表达式均可以正常使用。
 
+## 真值表运算
+
+使用如下语法:
+
+``` javascript
+truthtable((x, y, z) => !x && y || z, ['X', 'Y', 'Z', 'Ans'], ['T', 'F'])
+```
+
+并按下计算快捷键 `Shift + Ctrl + Alt + E / R`
+
+可以得到:
+
+``` markdown
+| X | Y | Z | Ans |
+|---|---|---|---|
+| F | F | F | F |
+| F | F | T | T |
+| F | T | F | T |
+| F | T | T | T |
+| T | F | F | F |
+| T | F | T | T |
+| T | T | F | F |
+| T | T | T | T |
+```
+
+
 # Snippets
 
 |Snippet|Name|Code|

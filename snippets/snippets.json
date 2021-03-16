@@ -591,6 +591,16 @@
         "body": "\\boldsymbol{K}",
         "description": "bsK"
     },
+    "bsl": {
+        "prefix": "\\\\bsl",
+        "body": "\\boldsymbol{l}",
+        "description": "bsl"
+    },
+    "bsL": {
+        "prefix": "\\\\bsL",
+        "body": "\\boldsymbol{L}",
+        "description": "bsL"
+    },
     "bsr": {
         "prefix": "\\\\bsr",
         "body": "\\boldsymbol{r}",
@@ -710,4 +720,46 @@
 		],
 		"description": "m per s"
 	},
+    "pd": {
+		"prefix": "\\\\pd",
+		"body": [
+            "\\overset{\\cdot}{${1:x}}",
+		],
+		"description": "pd"
+	},
+	"pdd": {
+		"prefix": "\\\\pdd",
+		"body": [
+			"\\overset{\\cdot\\cdot}{${1:x}}",
+		],
+		"description": "pdd"
+	},
+	"partial": {
+		"prefix": "\\\\partial",
+		"body": [
+			"\\frac{\\partial ${1}}{\\partial ${2}}",
+		],
+		"description": "partial"
+	},
+	"parx": {
+		"prefix": "\\\\parx",
+		"body": [
+			"\\frac{\\partial ${1}}{\\partial x}",
+		],
+		"description": "parx"
+	},
+	"pary": {
+		"prefix": "\\\\pary",
+		"body": [
+			"\\frac{\\partial ${1}}{\\partial y}",
+		],
+		"description": "pary"
+	},
+	"parz": {
+		"prefix": "\\\\parz",
+		"body": [
+			"\\frac{\\partial ${1}}{\\partial z}",
+		],
+		"description": "parz"
+	}
 }

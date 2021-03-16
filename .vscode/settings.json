@@ -21,6 +21,9 @@
         "noninteractive",
         "noprofile",
         "osascript",
+        "parx",
+        "pary",
+        "parz",
         "truthtable",
         "windowstyle",
         "xclip"
