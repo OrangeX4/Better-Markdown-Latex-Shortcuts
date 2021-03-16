@@ -11,6 +11,9 @@ import * as fs from 'fs'
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
+    // lock the moving
+    let isMovable = true
+
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with registerCommand
     // The commandId parameter must match the command field in package.json
@@ -62,55 +65,89 @@ export function activate(context: vscode.ExtensionContext) {
     )
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.moveToRight', () => {
+            if (!isMovable) {
+                return
+            }
+            
+            // Begin to move
+            isMovable = false
+
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             let doc = editor.document
             let sel = editor.selections
             if (sel.length === 0) { return }
+            let isJump = false
             editor.edit((edit) => {
                 sel.forEach((selection) => {
-                    let range = new vscode.Range(
-                        new vscode.Position(selection.start.line, selection.start.character),
-                        new vscode.Position(selection.end.line, selection.end.character + 1))
-                    let text = doc.getText(range)
-                    edit.replace(range, text.charAt(text.length - 1) + text.slice(0, text.length - 1))
+                    let line = doc.lineAt(selection.end)
+                    if (line.range.end.character === selection.end.character) {
+                        isJump = true
+                    }
+                    if (!isJump) {
+                        let range = new vscode.Range(
+                            new vscode.Position(selection.start.line, selection.start.character),
+                            new vscode.Position(selection.end.line, selection.end.character + 1))
+                        let text = doc.getText(range)
+                        edit.replace(range, text.charAt(text.length - 1) + text.slice(0, text.length - 1))
+                    }
                 })
             }).then(() => {
-                if (!editor) { return }
-                editor.selections = sel.map((selection) => {
-                    let start = selection.start
-                    let end = selection.end
-                    return new vscode.Selection(
-                        new vscode.Position(start.line, start.character + 1),
-                        new vscode.Position(end.line, end.character + 1))
-                })
+                if (!isJump) {
+                    if (!editor) { return }
+                    editor.selections = sel.map((selection) => {
+                        let start = selection.start
+                        let end = selection.end
+                        return new vscode.Selection(
+                            new vscode.Position(start.line, start.character + 1),
+                            new vscode.Position(end.line, end.character + 1))
+                    })
+                }
+                isMovable = true
             })
         })
     )
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.moveToLeft', () => {
+            if (!isMovable) {
+                return
+            }
+            
+            // Begin to move
+            isMovable = false
+
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             let doc = editor.document
             let sel = editor.selections
             if (sel.length === 0) { return }
+            let isJump = false
             editor.edit((edit) => {
                 sel.forEach((selection) => {
-                    let range = new vscode.Range(
-                        new vscode.Position(selection.start.line, selection.start.character - 1),
-                        new vscode.Position(selection.end.line, selection.end.character))
-                    let text = doc.getText(range)
-                    edit.replace(range, text.slice(1, text.length) + text.charAt(0))
+                    let line = doc.lineAt(selection.start)
+                    if (line.range.start.character === selection.start.character) {
+                        isJump = true
+                    }
+                    if (!isJump) {
+                        let range = new vscode.Range(
+                            new vscode.Position(selection.start.line, selection.start.character - 1),
+                            new vscode.Position(selection.end.line, selection.end.character))
+                        let text = doc.getText(range)
+                        edit.replace(range, text.slice(1, text.length) + text.charAt(0))
+                    }
                 })
             }).then(() => {
-                if (!editor) { return }
-                editor.selections = sel.map((selection) => {
-                    let start = selection.start
-                    let end = selection.end
-                    return new vscode.Selection(
-                        new vscode.Position(start.line, start.character - 1),
-                        new vscode.Position(end.line, end.character - 1))
-                })
+                if (!isJump) {
+                    if (!editor) { return }
+                    editor.selections = sel.map((selection) => {
+                        let start = selection.start
+                        let end = selection.end
+                        return new vscode.Selection(
+                            new vscode.Position(start.line, start.character - 1),
+                            new vscode.Position(end.line, end.character - 1))
+                    })
+                }
+                isMovable = true
             })
         })
     )
@@ -184,7 +221,7 @@ export function activate(context: vscode.ExtensionContext) {
             vscode.window.showErrorMessage(response.message)
         }
         fs.unlinkSync(imgPath)
-    }).catch (err => console.error(err.message)))
+    }).catch(err => console.error(err.message)))
 }
 
 // this method is called when your extension is deactivated
