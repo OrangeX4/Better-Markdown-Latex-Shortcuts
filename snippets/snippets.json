@@ -678,16 +678,30 @@
 	"dd": {
 		"prefix": "\\\\dd",
 		"body": [
-			"\\frac{{\\rm d}}{{\\rm d}${1}}"
+			"\\frac{{\\rm d}${1}}{{\\rm d}${2}}"
 		],
-		"description": "text"
+		"description": "dd"
 	},
 	"ddt": {
 		"prefix": "\\\\ddt",
 		"body": [
-			"\\frac{{\\rm d}}{{\\rm d}t}"
+			"\\frac{{\\rm d}${1}}{{\\rm d}t}"
 		],
-		"description": "text"
+		"description": "ddt"
+	},
+	"ddu": {
+		"prefix": "\\\\ddu",
+		"body": [
+			"\\frac{{\\rm d}${1}}{{\\rm d}u}"
+		],
+		"description": "ddu"
+	},
+	"ddv": {
+		"prefix": "\\\\ddv",
+		"body": [
+			"\\frac{{\\rm d}${1}}{{\\rm d}v}"
+		],
+		"description": "ddv"
 	},
 	"phi": {
 		"prefix": "\\\\phi",
@@ -744,6 +758,20 @@
 			"\\frac{\\partial ${1}}{\\partial z}"
 		],
 		"description": "parz"
+	},
+	"paru": {
+		"prefix": "\\\\paru",
+		"body": [
+			"\\frac{\\partial ${1}}{\\partial u}"
+		],
+		"description": "paru"
+	},
+	"parv": {
+		"prefix": "\\\\parv",
+		"body": [
+			"\\frac{\\partial ${1}}{\\partial v}"
+		],
+		"description": "parv"
 	},
 	"truthtable": {
 		"prefix": "\\\\truthtable",

@@ -21,6 +21,7 @@
         "noninteractive",
         "noprofile",
         "osascript",
+        "parv",
         "parx",
         "pary",
         "parz",
