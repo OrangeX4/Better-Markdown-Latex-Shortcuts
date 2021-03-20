@@ -744,5 +744,12 @@
 			"\\frac{\\partial ${1}}{\\partial z}"
 		],
 		"description": "parz"
+	},
+	"truthtable": {
+		"prefix": "\\\\truthtable",
+		"body": [
+			"truthtable((${1:x, y}) => ${2: X && Y}, ['${3:X}', '${4:Y}',  '${5:Ans}'], ['T', 'F'])"
+		],
+		"description": "parz"
 	}
 }
