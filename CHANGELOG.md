@@ -20,3 +20,5 @@ All notable changes to the "better-markdown-latex-shortcuts" extension will be d
 - 1.4.1 Update README
 - 1.5.0 Add upload and paste function
 - 1.6.0 Add elementary transform function
+- 1.7.0 Add move by words function
+- 1.8.0 Add braces and dollar function

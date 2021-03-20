@@ -10,7 +10,7 @@
         "math",
         "shortcut"
     ],
-    "version": "1.7.4",
+    "version": "1.8.0",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -95,6 +95,18 @@
                 "key": "Shift+Ctrl+Alt+V",
                 "mac": "Shift+Cmd+Alt+V",
                 "when": "resourceLangId == markdown && editorTextFocus"
+            },
+            {
+                "command": "better-markdown-latex-shortcuts.set",
+                "key": "Shift+[",
+                "mac": "Shift+[",
+                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
+            },
+            {
+                "command": "better-markdown-latex-shortcuts.dollar",
+                "key": "Shift+4",
+                "mac": "Shift+4",
+                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
             }
         ],
         "snippets": [

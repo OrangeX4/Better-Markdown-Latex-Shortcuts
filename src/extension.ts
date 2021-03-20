@@ -40,6 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
             })
         })
     )
+
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.copyToLeft', () => {
             let editor = vscode.window.activeTextEditor
@@ -63,12 +64,13 @@ export function activate(context: vscode.ExtensionContext) {
             })
         })
     )
+
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.moveToRight', () => {
             if (!isMovable) {
                 return
             }
-            
+
             // Begin to move
             isMovable = false
 
@@ -107,12 +109,13 @@ export function activate(context: vscode.ExtensionContext) {
             })
         })
     )
+
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.moveToLeft', () => {
             if (!isMovable) {
                 return
             }
-            
+
             // Begin to move
             isMovable = false
 
@@ -151,12 +154,13 @@ export function activate(context: vscode.ExtensionContext) {
             })
         })
     )
+
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.moveToRightQuickly', () => {
             if (!isMovable) {
                 return
             }
-            
+
             // Begin to move
             isMovable = false
 
@@ -203,12 +207,13 @@ export function activate(context: vscode.ExtensionContext) {
             })
         })
     )
+
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.moveToLeftQuickly', () => {
             if (!isMovable) {
                 return
             }
-            
+
             // Begin to move
             isMovable = false
 
@@ -228,7 +233,7 @@ export function activate(context: vscode.ExtensionContext) {
                         isJump = true
                     }
                     if (!isJump) {
-                        let substr = line.text.slice(0, selection.start.character)                        
+                        let substr = line.text.slice(0, selection.start.character)
                         let match = substr.match(/^([A-Z][a-z]+)|([A-Z]+)|(_*[a-z]+)|(_+)/g)
                         let lastStr = ''
                         if (match) {
@@ -260,6 +265,7 @@ export function activate(context: vscode.ExtensionContext) {
             })
         })
     )
+
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.singleCursor', () => {
             let editor = vscode.window.activeTextEditor
@@ -267,6 +273,7 @@ export function activate(context: vscode.ExtensionContext) {
             editor.selections = [editor.selection]
         })
     )
+
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.equal', () => {
             let editor = vscode.window.activeTextEditor
@@ -279,6 +286,7 @@ export function activate(context: vscode.ExtensionContext) {
             })
         })
     )
+
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.replace', () => {
             let editor = vscode.window.activeTextEditor
@@ -291,6 +299,7 @@ export function activate(context: vscode.ExtensionContext) {
             })
         })
     )
+
     context.subscriptions.push(
         vscode.commands.registerCommand('better-markdown-latex-shortcuts.define', () => {
             let editor = vscode.window.activeTextEditor
@@ -299,6 +308,34 @@ export function activate(context: vscode.ExtensionContext) {
             let selection = editor.selection
             let text = doc.getText(selection)
             calculator.define(text)
+        })
+    )
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('better-markdown-latex-shortcuts.set', () => {
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            let doc = editor.document
+            let selection = editor.selection
+            let text = doc.getText(selection)
+            editor.edit((edit) => {
+                edit.replace(selection, '{' + text + '}')
+            })
+
+        })
+    )
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('better-markdown-latex-shortcuts.dollar', () => {
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            let doc = editor.document
+            let selection = editor.selection
+            let text = doc.getText(selection)
+            editor.edit((edit) => {
+                edit.replace(selection, '$' + text + '$')
+            })
+
         })
     );
 
