@@ -10,7 +10,7 @@
         "math",
         "shortcut"
     ],
-    "version": "1.8.0",
+    "version": "1.8.1",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -106,6 +106,12 @@
                 "command": "better-markdown-latex-shortcuts.dollar",
                 "key": "Shift+4",
                 "mac": "Shift+4",
+                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
+            },
+            {
+                "command": "better-markdown-latex-shortcuts.abs",
+                "key": "Shift+\\",
+                "mac": "Shift+\\",
                 "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
             }
         ],

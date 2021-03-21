@@ -320,6 +320,22 @@ export function activate(context: vscode.ExtensionContext) {
             let text = doc.getText(selection)
             editor.edit((edit) => {
                 edit.replace(selection, '{' + text + '}')
+            }).then(() => {
+                if (!editor) {
+                    return
+                }
+                let sel = editor.selection
+                if (sel.anchor.line > sel.active.line || sel.anchor.line === sel.active.line && sel.anchor.character >= sel.active.character) {
+                    editor.selection = new vscode.Selection(
+                        new vscode.Position(sel.anchor.line, sel.anchor.character - 1),
+                        new vscode.Position(sel.active.line, sel.active.character + 1)
+                    )
+                } else {
+                    editor.selection = new vscode.Selection(
+                        new vscode.Position(sel.anchor.line, sel.anchor.character + 1),
+                        new vscode.Position(sel.active.line, sel.active.character - 1)
+                    )
+                }
             })
 
         })
@@ -334,6 +350,52 @@ export function activate(context: vscode.ExtensionContext) {
             let text = doc.getText(selection)
             editor.edit((edit) => {
                 edit.replace(selection, '$' + text + '$')
+            }).then(() => {
+                if (!editor) {
+                    return
+                }
+                let sel = editor.selection
+                if (sel.anchor.line > sel.active.line || sel.anchor.line === sel.active.line && sel.anchor.character >= sel.active.character) {
+                    editor.selection = new vscode.Selection(
+                        new vscode.Position(sel.anchor.line, sel.anchor.character - 1),
+                        new vscode.Position(sel.active.line, sel.active.character + 1)
+                    )
+                } else {
+                    editor.selection = new vscode.Selection(
+                        new vscode.Position(sel.anchor.line, sel.anchor.character + 1),
+                        new vscode.Position(sel.active.line, sel.active.character - 1)
+                    )
+                }
+            })
+
+        })
+    )
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('better-markdown-latex-shortcuts.abs', () => {
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            let doc = editor.document
+            let selection = editor.selection
+            let text = doc.getText(selection)
+            editor.edit((edit) => {
+                edit.replace(selection, '|' + text + '|')
+            }).then(() => {
+                if (!editor) {
+                    return
+                }
+                let sel = editor.selection
+                if (sel.anchor.line > sel.active.line || sel.anchor.line === sel.active.line && sel.anchor.character >= sel.active.character) {
+                    editor.selection = new vscode.Selection(
+                        new vscode.Position(sel.anchor.line, sel.anchor.character - 1),
+                        new vscode.Position(sel.active.line, sel.active.character + 1)
+                    )
+                } else {
+                    editor.selection = new vscode.Selection(
+                        new vscode.Position(sel.anchor.line, sel.anchor.character + 1),
+                        new vscode.Position(sel.active.line, sel.active.character - 1)
+                    )
+                }
             })
 
         })
