@@ -10,7 +10,7 @@ declare module 'upimg' {
         }
     }
 
-    namespace toutiao {
+    namespace alibaba {
         function upload(path: string): Promise<Response>
     }
 }
