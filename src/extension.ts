@@ -410,13 +410,11 @@ export function activate(context: vscode.ExtensionContext) {
                 let editor = vscode.window.activeTextEditor
                 if (!editor) { return }
                 const imgPath = path.join((process.env.HOME || process.env.USERPROFILE) as string, 'better-markdown-latex-shortcuts-img.png')
-                console.log("First")
                 return new Promise<string>((resolve) => {
                     paster.saveAndPaste(imgPath, () => resolve(imgPath))
                 })
             }).then((imgPath) => (upimg as any)['58'].upload(imgPath as string)).then(response => {
                 const imgPath = path.join((process.env.HOME || process.env.USERPROFILE) as string, 'better-markdown-latex-shortcuts-img.png')
-                console.log("Second")
                 if (response.success) {
                     let editor = vscode.window.activeTextEditor
                     if (!editor) { return }
