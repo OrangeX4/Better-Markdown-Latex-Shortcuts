@@ -399,37 +399,43 @@ export function activate(context: vscode.ExtensionContext) {
             })
 
         })
-    );
+    )
 
-    (new Promise((resolve) => {
-        context.subscriptions.push(vscode.commands.registerCommand('better-markdown-latex-shortcuts.paste', resolve))
-    }).then(() => {
-        let editor = vscode.window.activeTextEditor
-        if (!editor) { return }
-        const imgPath = path.join((process.env.HOME || process.env.USERPROFILE) as string, 'better-markdown-latex-shortcuts-img.png')
-        return new Promise<string>((resolve) => {
-            paster.saveAndPaste(imgPath, () => resolve(imgPath))
-        })
-    }).then((imgPath) => (upimg as any)['58'].upload(imgPath as string)).then(response => {
-        const imgPath = path.join((process.env.HOME || process.env.USERPROFILE) as string, 'better-markdown-latex-shortcuts-img.png')
-        if (response.success) {
-            let editor = vscode.window.activeTextEditor
-            if (!editor) { return }
-            editor.edit((edit) => {
+    context.subscriptions.push(
+        vscode.commands.registerCommand('better-markdown-latex-shortcuts.paste', () => {
+            new Promise((resolve) => {
+                resolve(null)
+                return
+            }).then(() => {
                 let editor = vscode.window.activeTextEditor
                 if (!editor) { return }
-                let selection = editor.selection
-                if (selection.isEmpty) {
-                    edit.insert(selection.start, `![](${response.url})`)
+                const imgPath = path.join((process.env.HOME || process.env.USERPROFILE) as string, 'better-markdown-latex-shortcuts-img.png')
+                console.log("First")
+                return new Promise<string>((resolve) => {
+                    paster.saveAndPaste(imgPath, () => resolve(imgPath))
+                })
+            }).then((imgPath) => (upimg as any)['58'].upload(imgPath as string)).then(response => {
+                const imgPath = path.join((process.env.HOME || process.env.USERPROFILE) as string, 'better-markdown-latex-shortcuts-img.png')
+                console.log("Second")
+                if (response.success) {
+                    let editor = vscode.window.activeTextEditor
+                    if (!editor) { return }
+                    editor.edit((edit) => {
+                        let editor = vscode.window.activeTextEditor
+                        if (!editor) { return }
+                        let selection = editor.selection
+                        if (selection.isEmpty) {
+                            edit.insert(selection.start, `![](${response.url})`)
+                        } else {
+                            edit.replace(selection, `![${editor.document.getText(selection)}](${response.url})`)
+                        }
+                    })
                 } else {
-                    edit.replace(selection, `![${editor.document.getText(selection)}](${response.url})`)
+                    vscode.window.showErrorMessage(response.message)
                 }
-            })
-        } else {
-            vscode.window.showErrorMessage(response.message)
-        }
-        fs.unlinkSync(imgPath)
-    }).catch(err => console.error(err.message)))
+                fs.unlinkSync(imgPath)
+            }).catch(err => console.error(err.message))
+        }))
 }
 
 // this method is called when your extension is deactivated
