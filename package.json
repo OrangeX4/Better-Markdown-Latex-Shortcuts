@@ -10,7 +10,7 @@
         "math",
         "shortcut"
     ],
-    "version": "1.8.3",
+    "version": "1.8.4",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -21,6 +21,7 @@
     "activationEvents": [
         "onLanguage:markdown",
         "onLanguage:latex",
+        "onLanguage:html",
         "onLanguage:python",
         "onLanguage:javascript",
         "onLanguage:typescript",
