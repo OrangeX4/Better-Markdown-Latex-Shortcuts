@@ -6,20 +6,6 @@
 		],
 		"description": "\\\\"
     },
-	"singleLine": {
-		"prefix": "\\\\$",
-		"body": "$\\displaystyle ${1:${TM_SELECTED_TEXT}}$",
-		"description": "subscript"
-	},
-	"multiLine": {
-		"prefix": "\\\\$$",
-		"body": [
-            "$$",
-            "${1:${TM_SELECTED_TEXT}}",
-            "$$"
-        ],
-		"description": "subscript"
-	},
 	"cdots": {
 		"prefix": "\\\\...",
 		"body": "\\cdots ",
@@ -36,6 +22,13 @@
 			"{\\rm d}"
 		],
 		"description": "{\\rm d}"
+	},
+	"D": {
+		"prefix": "\\\\D",
+		"body": [
+			"{\\rm D}"
+		],
+		"description": "{\\rm D}"
 	},
 	"dx": {
 		"prefix": "\\\\dx",
@@ -79,13 +72,6 @@
 		],
         "description": "A line with multiply"
     },
-	"dotmultiply": {
-		"prefix": "\\\\dotmultiply",
-		"body": [
-            "${1:\\alpha}${3:_}1\\cdot ${1:\\alpha}${3:_}2\\cdots ${1:\\alpha}${3:_}${2:n}"
-		],
-        "description": "A line with dot multiply"
-    },
 	"plus": {
 		"prefix": "\\\\plus",
 		"body": [
@@ -99,13 +85,6 @@
             "${1:\\alpha}${3:_}1,${1:\\alpha}${3:_}2,\\cdots,${1:\\alpha}${3:_}${2:n}"
 		],
         "description": "A line with comma"
-    },
-	"vdots": {
-		"prefix": "\\\\vdots",
-		"body": [
-			"\\vdots &\\vdots & &\\vdots \\\\\\\\"
-		],
-        "description": "A line of vdots"
     },
     "aligned": {
         "prefix": "\\\\aligned",
@@ -216,7 +195,17 @@
     },
     "bracket": {
         "prefix": "\\\\bracket",
-        "body": "\\left ${1:${TM_SELECTED_TEXT}} \\right",
+        "body": "\\left( ${1:${TM_SELECTED_TEXT}} \\right)",
+        "description": "bracket"
+    },
+    "square_bracket": {
+        "prefix": "\\\\bracket",
+        "body": "\\left( ${1:${TM_SELECTED_TEXT}} \\right)",
+        "description": "bracket"
+    },
+    "curly_bracket": {
+        "prefix": "\\\\bracket",
+        "body": "\\left\\{ ${1:${TM_SELECTED_TEXT}} \\right\\}",
         "description": "bracket"
     },
     "c2vector": {
@@ -584,6 +573,16 @@
         "body": "\\boldsymbol{L}",
         "description": "bsL"
     },
+    "bsn": {
+        "prefix": "\\\\bsn",
+        "body": "\\boldsymbol{n}",
+        "description": "bsn"
+    },
+    "bsN": {
+        "prefix": "\\\\bsN",
+        "body": "\\boldsymbol{N}",
+        "description": "bsN"
+    },
     "bsr": {
         "prefix": "\\\\bsr",
         "body": "\\boldsymbol{r}",
@@ -717,20 +716,6 @@
 		],
 		"description": "m per s"
 	},
-    "pd": {
-		"prefix": "\\\\pd",
-		"body": [
-            "\\overset{\\cdot}{${1:x}}"
-		],
-		"description": "pd"
-	},
-	"pdd": {
-		"prefix": "\\\\pdd",
-		"body": [
-			"\\overset{\\cdot\\cdot}{${1:x}}"
-		],
-		"description": "pdd"
-	},
 	"partial": {
 		"prefix": "\\\\partial",
 		"body": [
@@ -772,12 +757,5 @@
 			"\\frac{\\partial ${1}}{\\partial v}"
 		],
 		"description": "parv"
-	},
-	"truthtable": {
-		"prefix": "\\\\truthtable",
-		"body": [
-			"truthtable((${1:x, y}) => ${2: X && Y}, ['${3:X}', '${4:Y}',  '${5:Ans}'], ['T', 'F'])"
-		],
-		"description": "parz"
 	}
 }
