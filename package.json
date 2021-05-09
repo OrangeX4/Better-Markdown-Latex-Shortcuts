@@ -10,7 +10,7 @@
         "math",
         "shortcut"
     ],
-    "version": "1.8.6",
+    "version": "1.9.2",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -115,16 +115,6 @@
                 "mac": "Shift+\\",
                 "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
             }
-        ],
-        "snippets": [
-            {
-                "language": "markdown",
-                "path": "./snippets/snippets.json"
-            },
-            {
-                "language": "latex",
-                "path": "./snippets/snippets.json"
-            }
         ]
     },
     "scripts": {
@@ -160,6 +150,7 @@
     "dependencies": {
         "@types/mathjs": "^6.0.11",
         "mathjs": "^8.1.1",
+        "python-shell": "^3.0.0",
         "upimg": "^0.5.0"
     }
 }

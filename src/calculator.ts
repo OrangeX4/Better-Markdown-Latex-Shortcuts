@@ -235,6 +235,9 @@ function toMatrix(text: string): string {
         if (array) {
             let result = ''
             if (array[1] === 'vmatrix') {
+                if (array[2][array[2].length - 1] === '\\') {
+                    array[2] = array[2].slice(0, array[2].length - 2)
+                }
                 result = 'det([' + array[2].split('\\\\').map((line) => {
                     return '[' + line.replace(/&/g, ',') + ']'
                 }).join() + '])'
