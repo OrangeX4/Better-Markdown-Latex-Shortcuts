@@ -1,11 +1,12 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode'
-import * as calculator from './calculator'
 import * as paster from './paster'
 import * as path from 'path'
 import * as upimg from 'upimg'
 import * as fs from 'fs'
+
+const translateLatex = require('latex-expression-translator')
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -271,43 +272,6 @@ export function activate(context: vscode.ExtensionContext) {
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             editor.selections = [editor.selection]
-        })
-    )
-
-    context.subscriptions.push(
-        vscode.commands.registerCommand('better-markdown-latex-shortcuts.equal', () => {
-            let editor = vscode.window.activeTextEditor
-            if (!editor) { return }
-            let doc = editor.document
-            let selection = editor.selection
-            let text = doc.getText(selection)
-            editor.edit((edit) => {
-                edit.insert(selection.end, calculator.equal(text))
-            })
-        })
-    )
-
-    context.subscriptions.push(
-        vscode.commands.registerCommand('better-markdown-latex-shortcuts.replace', () => {
-            let editor = vscode.window.activeTextEditor
-            if (!editor) { return }
-            let doc = editor.document
-            let selection = editor.selection
-            let text = doc.getText(selection)
-            editor.edit((edit) => {
-                edit.replace(selection, calculator.replace(text))
-            })
-        })
-    )
-
-    context.subscriptions.push(
-        vscode.commands.registerCommand('better-markdown-latex-shortcuts.define', () => {
-            let editor = vscode.window.activeTextEditor
-            if (!editor) { return }
-            let doc = editor.document
-            let selection = editor.selection
-            let text = doc.getText(selection)
-            calculator.define(text)
         })
     )
 

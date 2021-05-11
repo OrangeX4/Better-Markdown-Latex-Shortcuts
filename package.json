@@ -10,7 +10,7 @@
         "math",
         "shortcut"
     ],
-    "version": "1.9.2",
+    "version": "2.0.0",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -74,24 +74,6 @@
                 "when": "editorTextFocus"
             },
             {
-                "command": "better-markdown-latex-shortcuts.equal",
-                "key": "Shift+Ctrl+Alt+E",
-                "mac": "Shift+Cmd+Alt+E",
-                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
-            },
-            {
-                "command": "better-markdown-latex-shortcuts.replace",
-                "key": "Shift+Ctrl+Alt+R",
-                "mac": "Shift+Cmd+Alt+R",
-                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
-            },
-            {
-                "command": "better-markdown-latex-shortcuts.define",
-                "key": "Shift+Ctrl+Alt+D",
-                "mac": "Shift+Cmd+Alt+D",
-                "when": "resourceLangId == markdown && editorTextFocus && editorHasSelection || resourceLangId == latex && editorTextFocus && editorHasSelection"
-            },
-            {
                 "command": "better-markdown-latex-shortcuts.paste",
                 "key": "Shift+Ctrl+Alt+V",
                 "mac": "Shift+Cmd+Alt+V",
@@ -148,9 +130,6 @@
     },
     "homepage": "https://orangex4.cool",
     "dependencies": {
-        "@types/mathjs": "^6.0.11",
-        "mathjs": "^8.1.1",
-        "python-shell": "^3.0.0",
         "upimg": "^0.5.0"
     }
 }
