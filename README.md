@@ -45,7 +45,14 @@ Snippets 已经使用移动到了另一个插件 `OrangeX4 Snippets` 中.
 
 计算器功能已经使用 **Sympy** 重写, 并且移动到了另一个插件中.
 
-请搜索 `Latex Sympy` 下载.
+请搜索 `Latex Sympy Calculator` 下载.
+
+或者 [Latex Sympy Calculator](https://marketplace.visualstudio.com/items?itemName=OrangeX4.latex-sympy-calculator)
+
+
+![](https://ae01.alicdn.com/kf/Ud246889e25e84421a60a86435e693bfaJ.jpg)
+
+支持: 符号运算, 微分积分, 矩阵运算等...
 
 
 ## English Version
