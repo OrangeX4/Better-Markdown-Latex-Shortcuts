@@ -100,3 +100,6 @@ Search `Orangex4` in vscode extensions market and install the one called "Better
 ### Single Selections
 
 ![single](https://ae01.alicdn.com/kf/U9d8f4514fcbc4aa585e4ec98d177b8fb4.jpg)
+
+## License
+This project is licensed under the MIT License.
