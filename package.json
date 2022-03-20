@@ -10,7 +10,7 @@
         "math",
         "shortcut"
     ],
-    "version": "2.0.1",
+    "version": "2.1.0",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -22,12 +22,13 @@
     "activationEvents": [
         "onLanguage:markdown",
         "onLanguage:latex",
-        "onLanguage:html",
-        "onLanguage:python",
-        "onLanguage:javascript",
-        "onLanguage:typescript",
-        "onLanguage:c++",
-        "onLanguage:json"
+        "onCommand:better-markdown-latex-shortcuts.copyToRight",
+        "onCommand:better-markdown-latex-shortcuts.copyToLeft",
+        "onCommand:better-markdown-latex-shortcuts.moveToRight",
+        "onCommand:better-markdown-latex-shortcuts.moveToLeft",
+        "onCommand:better-markdown-latex-shortcuts.moveToRightQuickly",
+        "onCommand:better-markdown-latex-shortcuts.moveToLeftQuickly",
+        "onCommand:better-markdown-latex-shortcuts.singleCursor"
     ],
     "main": "./out/extension.js",
     "contributes": {
