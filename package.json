@@ -22,6 +22,7 @@
     "activationEvents": [
         "onLanguage:markdown",
         "onLanguage:latex",
+        "onLanguage:tex",
         "onCommand:better-markdown-latex-shortcuts.copyToRight",
         "onCommand:better-markdown-latex-shortcuts.copyToLeft",
         "onCommand:better-markdown-latex-shortcuts.moveToRight",
@@ -32,6 +33,43 @@
     ],
     "main": "./out/extension.js",
     "contributes": {
+        "commands": [
+            {
+                "category": "Better-Markdown-Latex-Shortcuts",
+                "command": "better-markdown-latex-shortcuts.copyToRight",
+                "title": "Copy To Right"
+            },
+            {
+                "category": "Better-Markdown-Latex-Shortcuts",
+                "command": "better-markdown-latex-shortcuts.copyToLeft",
+                "title": "Copy To Left"
+            },
+            {
+                "category": "Better-Markdown-Latex-Shortcuts",
+                "command": "better-markdown-latex-shortcuts.moveToRight",
+                "title": "Move To Right"
+            },
+            {
+                "category": "Better-Markdown-Latex-Shortcuts",
+                "command": "better-markdown-latex-shortcuts.moveToLeft",
+                "title": "Move To Left"
+            },
+            {
+                "category": "Better-Markdown-Latex-Shortcuts",
+                "command": "better-markdown-latex-shortcuts.moveToRightQuickly",
+                "title": "Move To Right Quickly"
+            },
+            {
+                "category": "Better-Markdown-Latex-Shortcuts",
+                "command": "better-markdown-latex-shortcuts.moveToLeftQuickly",
+                "title": "Move To Left Quickly"
+            },
+            {
+                "category": "Better-Markdown-Latex-Shortcuts",
+                "command": "better-markdown-latex-shortcuts.singleCursor",
+                "title": "Single Cursor"
+            }
+        ],
         "keybindings": [
             {
                 "command": "better-markdown-latex-shortcuts.copyToRight",
@@ -74,12 +112,6 @@
                 "key": "Ctrl+Alt+U",
                 "mac": "Cmd+Alt+U",
                 "when": "editorTextFocus"
-            },
-            {
-                "command": "better-markdown-latex-shortcuts.paste",
-                "key": "Shift+Ctrl+Alt+V",
-                "mac": "Shift+Cmd+Alt+V",
-                "when": "resourceLangId == markdown && editorTextFocus"
             },
             {
                 "command": "better-markdown-latex-shortcuts.set",
