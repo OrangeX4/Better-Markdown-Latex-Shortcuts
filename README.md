@@ -18,7 +18,7 @@
 
 使用快捷键 `Shift + Alt + →` 将选中内容在行内向右复制。
 
-![move](https://ae01.alicdn.com/kf/Ud043e489d79745469b7cca5bf59a45d63.jpg)
+![copy](https://ae01.alicdn.com/kf/Ud043e489d79745469b7cca5bf59a45d63.jpg)
 
 ### 多行复制
 
@@ -30,7 +30,7 @@
 
 使用快捷键 `Alt + →` 将选中内容在行内向右移动一位，使用快捷键 `Ctrl + Alt + →` 将选中内容在行内向右移动一个单词。
 
-![copy](https://ae01.alicdn.com/kf/U03ce2e8b468c49d4b80f5399c2290ff72.jpg)
+![move](https://ae01.alicdn.com/kf/U03ce2e8b468c49d4b80f5399c2290ff72.jpg)
 
 ## Snippets
 
@@ -58,8 +58,11 @@ You can also press `Ctrl + Alt + U` to single the selections.
 
 Similarly to `Shift + Alt + ↑↓`, you can press `Shift + Alt + ← →` to copy what you select to left or right.
 
-![move](https://ae01.alicdn.com/kf/Ud043e489d79745469b7cca5bf59a45d63.jpg)
+![copy](https://ae01.alicdn.com/kf/Ud043e489d79745469b7cca5bf59a45d63.jpg)
 
 Similarly to `Alt + ↑↓`, you can press `Alt + ← →` to move what you select to left or right.
 
-![copy](https://ae01.alicdn.com/kf/U03ce2e8b468c49d4b80f5399c2290ff72.jpg)
+![move](https://ae01.alicdn.com/kf/U03ce2e8b468c49d4b80f5399c2290ff72.jpg)
+
+## License
+This project is licensed under the MIT License.
