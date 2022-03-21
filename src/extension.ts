@@ -379,17 +379,25 @@ export function activate(context: vscode.ExtensionContext) {
         end = '\n$' + line.text.slice(match.index + match[0].length, line.text.length)
       }
       const relations = ['=', '\\cong', '\\thickapprox', '\\neq', '<', '>', '\\le', '\\ge', '\\leqslant', '\\geqslant']
+      let bracketCount = 0
       let lst = 0
       let cur = 0
       let txtList: string[] = []
       while (cur !== content.length) {
-        for (const relation of relations) {
-          if (content.length - cur >= relation.length && content.slice(cur, cur + relation.length) === relation) {
-            txtList.push(content.slice(lst, cur).trim())
-            txtList.push(relation)
-            cur += relation.length - 1
-            lst = cur + 1
-            break
+        if (['(', '[', '{'].indexOf(content[cur]) !== -1) {
+          bracketCount++
+        } else if ([')', ']', '}'].indexOf(content[cur]) !== -1) {
+          bracketCount--
+        }
+        if (bracketCount === 0) {
+          for (const relation of relations) {
+            if (content.length - cur >= relation.length && content.slice(cur, cur + relation.length) === relation) {
+              txtList.push(content.slice(lst, cur).trim())
+              txtList.push(relation)
+              cur += relation.length - 1
+              lst = cur + 1
+              break
+            }
           }
         }
         cur++
