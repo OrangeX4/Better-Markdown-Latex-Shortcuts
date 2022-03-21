@@ -10,7 +10,7 @@
         "math",
         "shortcut"
     ],
-    "version": "2.1.0",
+    "version": "2.2.0",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -68,6 +68,11 @@
                 "category": "Better-Markdown-Latex-Shortcuts",
                 "command": "better-markdown-latex-shortcuts.singleCursor",
                 "title": "Single Cursor"
+            },
+            {
+                "category": "Better-Markdown-Latex-Shortcuts",
+                "command": "better-markdown-latex-shortcuts.alignedEnviroment",
+                "title": "Change to aligned enviroment"
             }
         ],
         "keybindings": [
@@ -111,6 +116,12 @@
                 "command": "better-markdown-latex-shortcuts.singleCursor",
                 "key": "Ctrl+Alt+U",
                 "mac": "Cmd+Alt+U",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "better-markdown-latex-shortcuts.alignedEnviromen",
+                "key": "Ctrl+Shift+Alt+C",
+                "mac": "Cmd+Shift+Alt+C",
                 "when": "editorTextFocus"
             },
             {
