@@ -10,7 +10,7 @@
         "math",
         "shortcut"
     ],
-    "version": "2.3.0",
+    "version": "2.4.0",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -32,6 +32,7 @@
         "onCommand:better-markdown-latex-shortcuts.singleCursor"
     ],
     "main": "./out/extension.js",
+    "browser": "./out/extension.js",
     "contributes": {
         "commands": [
             {
