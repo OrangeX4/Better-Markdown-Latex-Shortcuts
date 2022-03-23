@@ -10,7 +10,7 @@
         "math",
         "shortcut"
     ],
-    "version": "2.2.1",
+    "version": "2.3.0",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -173,8 +173,5 @@
         "type": "git",
         "url": "https://github.com/OrangeX4/Better-Markdown-Latex-Shortcuts"
     },
-    "homepage": "https://orangex4.cool",
-    "dependencies": {
-        "upimg": "^0.5.0"
-    }
+    "homepage": "https://orangex4.cool"
 }

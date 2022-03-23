@@ -23,3 +23,4 @@ All notable changes to the "better-markdown-latex-shortcuts" extension will be d
 - 1.7.0 Add move by words function
 - 1.8.0 Add braces and dollar function
 - 2.0.0 Move Snippets and Calculator
+- 2.3.0 Repair some bugs

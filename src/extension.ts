@@ -1,9 +1,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode'
-import * as path from 'path'
-import * as upimg from 'upimg'
-import * as fs from 'fs'
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -30,16 +27,27 @@ export function activate(context: vscode.ExtensionContext) {
         })
       }).then(() => {
         if (!editor) { return }
+        sel = sel.sort((a, b) => a.start.isBefore(b.start) ? -1 : 1)
+        let count = 0
+        let lst = -1
         editor.selections = sel.map((selection) => {
+          if (lst !== selection.start.line) {
+            count = 0
+            lst = selection.start.line
+          }
           let end = selection.end
           let text = doc.getText(selection)
-          return new vscode.Selection(end, new vscode.Position(end.line, end.character + text.length))
+          count += 1
+          return new vscode.Selection(
+            new vscode.Position(end.line, end.character + (count - 1) * text.length),
+            new vscode.Position(end.line, end.character + count * text.length)
+            )
         })
       })
     })
-  )
-
-  context.subscriptions.push(
+    )
+    
+    context.subscriptions.push(
     vscode.commands.registerCommand('better-markdown-latex-shortcuts.copyToLeft', () => {
       let editor = vscode.window.activeTextEditor
       if (!editor) { return }
@@ -54,10 +62,22 @@ export function activate(context: vscode.ExtensionContext) {
         })
       }).then(() => {
         if (!editor) { return }
+        sel = sel.sort((a, b) => a.start.isBefore(b.start) ? -1 : 1)
+        let count = 0
+        let lst = -1
         editor.selections = sel.map((selection) => {
+          if (lst !== selection.start.line) {
+            count = 0
+            lst = selection.start.line
+          }
           let start = selection.start
           let text = doc.getText(selection)
-          return new vscode.Selection(start, new vscode.Position(start.line, start.character + text.length))
+          count += 1
+          // return new vscode.Selection(start, new vscode.Position(start.line, start.character + text.length))
+          return new vscode.Selection(
+            new vscode.Position(start.line, start.character + (count - 1) * text.length),
+            new vscode.Position(start.line, start.character + count * text.length)
+          )
         })
       })
     })
@@ -84,13 +104,15 @@ export function activate(context: vscode.ExtensionContext) {
           if (line.range.end.character === selection.end.character) {
             isJump = true
           }
+        })
+        sel.forEach((selection) => {
           if (!isJump) {
             let range = new vscode.Range(
               new vscode.Position(selection.start.line, selection.start.character),
               new vscode.Position(selection.end.line, selection.end.character + 1))
-            let text = doc.getText(range)
-            edit.replace(range, text.charAt(text.length - 1) + text.slice(0, text.length - 1))
-          }
+              let text = doc.getText(range)
+              edit.replace(range, text.charAt(text.length - 1) + text.slice(0, text.length - 1))
+            }
         })
       }).then(() => {
         if (!isJump) {
@@ -129,13 +151,15 @@ export function activate(context: vscode.ExtensionContext) {
           if (line.range.start.character === selection.start.character) {
             isJump = true
           }
+        })
+        sel.forEach((selection) => {
           if (!isJump) {
             let range = new vscode.Range(
               new vscode.Position(selection.start.line, selection.start.character - 1),
               new vscode.Position(selection.end.line, selection.end.character))
-            let text = doc.getText(range)
-            edit.replace(range, text.slice(1, text.length) + text.charAt(0))
-          }
+              let text = doc.getText(range)
+              edit.replace(range, text.slice(1, text.length) + text.charAt(0))
+            }
         })
       }).then(() => {
         if (!isJump) {
@@ -177,6 +201,9 @@ export function activate(context: vscode.ExtensionContext) {
           if (line.range.end.character === selection.end.character) {
             isJump = true
           }
+        })
+        sel.forEach((selection) => {
+          let line = doc.lineAt(selection.end)
           if (!isJump) {
             let substr = line.text.slice(selection.end.character, line.text.length)
             let match = substr.match(/^([A-Z][a-z]+)|([A-Z]+)|(_*[a-z]+)|(_+)/)
@@ -230,6 +257,9 @@ export function activate(context: vscode.ExtensionContext) {
           if (line.range.start.character === selection.start.character) {
             isJump = true
           }
+        })
+        sel.forEach((selection) => {
+          let line = doc.lineAt(selection.start)
           if (!isJump) {
             let substr = line.text.slice(0, selection.start.character)
             let match = substr.match(/^([A-Z][a-z]+)|([A-Z]+)|(_*[a-z]+)|(_+)/g)
