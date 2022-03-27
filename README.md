@@ -10,13 +10,13 @@
 
 按下 `Shift + Ctrl + Alt + C` 可以将行公式转为 aligned 环境。
 
-![](https://gitee.com/orangex4/picgo/raw/master/images/aligned.gif)
+![](https://picgo-1258602555.cos.ap-nanjing.myqcloud.com/aligned.gif)
 
 ## 选中快捷键
 
 选中一些文本，然后输入 `{`、`|` 或 `$` 可以囊括输入文本两边。
 
-![](https://gitee.com/orangex4/picgo/raw/master/images/set.gif)
+![](https://picgo-1258602555.cos.ap-nanjing.myqcloud.com/set.gif)
 
 ## 行内复制与移动
 
